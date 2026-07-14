@@ -1,0 +1,7 @@
+CV-*.md
+Lettre-*.md
+output/
+versions/
+design-system/
+.DS_Store
+**/.DS_Store

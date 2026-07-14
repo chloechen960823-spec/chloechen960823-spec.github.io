@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Selected product design projects by Chloé Chen." />
+    <title>Work — Chloé Chen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css?v=23" />
+  </head>
+  <body class="is-loading" data-page="work">
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-mark"><span>Work</span><i></i></div>
+      <p>Selected projects</p>
+    </div>
+    <div class="page-texture" aria-hidden="true"></div>
+
+    <header class="header" aria-label="Portfolio navigation">
+      <a class="brand" href="./index.html" aria-label="Chloé Chen home">
+        <span>CC</span>
+        <strong>Chloé Chen</strong>
+      </a>
+      <div class="header-center">
+        <span>Product designer</span>
+        <span>Selected work</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a class="is-active" href="./work.html">Work</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-main" id="main">
+      <section class="page-hero">
+        <p class="eyebrow">Work</p>
+        <h1>Selected projects with different storytelling angles.</h1>
+        <p>
+          This page will become the full project index. For now it gives each project a proper entry point,
+          instead of flattening one case study onto the Home page.
+        </p>
+      </section>
+
+      <section class="project-index project-index--page" aria-label="Project index">
+        <a class="project-line reveal" href="./work.html#esendeo">
+          <span>01</span>
+          <strong>Esendeo</strong>
+          <em>Product strategy · UX/UI · Brand system</em>
+          <i aria-hidden="true">↘</i>
+        </a>
+        <a class="project-line reveal" href="./wms-design-system.html">
+          <span>02</span>
+          <strong>WMS Design System</strong>
+          <em>Product systems · UX/UI · Component library</em>
+          <i aria-hidden="true">↘</i>
+        </a>
+        <div class="project-line reveal">
+          <span>03</span>
+          <strong>Bélène</strong>
+          <em>Brand repositioning · Coming next</em>
+        </div>
+      </section>
+
+      <section class="work-detail" id="esendeo">
+        <div class="work-detail-copy reveal">
+          <p class="eyebrow">Featured case preview</p>
+          <h2>Esendeo</h2>
+          <p>
+            A B2B logistics SaaS project focused on making a complex offer understandable through product
+            narrative, page architecture and a reusable visual system.
+          </p>
+        </div>
+        <div class="work-detail-image reveal">
+          <img src="./assets/esendeo/01-hero.png" alt="Esendeo case study visual preview" loading="lazy" />
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/main.js?v=18"></script>
+  </body>
+</html>
