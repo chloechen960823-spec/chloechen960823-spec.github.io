@@ -151,6 +151,385 @@ const initPracticeAnimation = () => {
 
 initPracticeAnimation();
 
+const initVibeDemo = () => {
+  const demo = document.querySelector(".vibe-demo-window--library");
+  if (!demo) return;
+
+  const title = demo.querySelector("[data-demo-title]");
+  const description = demo.querySelector("[data-demo-description]");
+  const search = demo.querySelector("[data-demo-search]");
+  const library = demo.querySelector("[data-demo-library]");
+  const detailMode = demo.querySelector("[data-demo-detail-mode]");
+  const detailTitle = demo.querySelector("[data-demo-detail-title]");
+  const detailLines = Array.from(demo.querySelectorAll("[data-demo-detail-line]"));
+  const categoryButtons = Array.from(demo.querySelectorAll("[data-demo-category]"));
+  const languageButtons = Array.from(demo.querySelectorAll("[data-demo-language]"));
+
+  const data = {
+    en: {
+      motivation: {
+        search: "motivation · fit · career story",
+        title: "Start from the question, then retrieve the story.",
+        description: "The library turns vague interview prompts into prepared, reusable evidence.",
+        questions: [
+          {
+            id: "Q01",
+            status: "Ready",
+            title: "Why are you interested in this role?",
+            keywords: "Keywords: motivation · product design · France",
+            meta: "2 answer angles · 2 versions",
+            detailTitle: "Story angle: role fit",
+            lines: [
+              "Situation: applications require a clear, role-specific motivation.",
+              "Action: connect the target role with verified project experience.",
+              "Result: each answer stays specific without rewriting from zero.",
+            ],
+          },
+          {
+            id: "Q03",
+            status: "Customize",
+            title: "What makes your profile different?",
+            keywords: "Keywords: design systems · AI prototyping · multilingual context",
+            meta: "3 answer angles · 2 versions",
+            detailTitle: "Story angle: hybrid product profile",
+            lines: [
+              "Situation: the profile combines UX, visual systems and AI-assisted building.",
+              "Action: frame the mix as a product strength, not a scattered path.",
+              "Result: recruiters see a clearer design narrative.",
+            ],
+          },
+        ],
+      },
+      behavioral: {
+        search: "conflict · ambiguity · decision",
+        title: "Use one verified story across multiple behavioral questions.",
+        description: "Instead of memorizing separate answers, the product maps reusable stories to question families.",
+        questions: [
+          {
+            id: "Q08",
+            status: "Ready",
+            title: "Tell me about a project where you turned messy information into a clear system.",
+            keywords: "Keywords: information architecture · complexity · product judgment",
+            meta: "3 answer angles · 2 versions",
+            detailTitle: "Story angle: external memory system",
+            lines: [
+              "Situation: interview stories were scattered across notes and screenshots.",
+              "Action: structure facts before generating polished answers.",
+              "Result: one verified story can map to multiple questions.",
+            ],
+          },
+          {
+            id: "Q21",
+            status: "Needs fact check",
+            title: "Tell me about a time you handled stakeholder disagreement.",
+            keywords: "Keywords: alignment · constraint · trade-off",
+            meta: "2 answer angles · 1 version",
+            detailTitle: "Story angle: decision clarity",
+            lines: [
+              "Situation: different stakeholders cared about different outcomes.",
+              "Action: translate opinions into shared criteria and product risks.",
+              "Result: the conversation moved from preference to decision.",
+            ],
+          },
+        ],
+      },
+      ai: {
+        search: "AI · validation · prototype",
+        title: "Show AI as a design capability, not a shortcut.",
+        description: "The MVP captures where AI helped, where human judgment intervened, and how the result was tested.",
+        questions: [
+          {
+            id: "Q14",
+            status: "Voice check",
+            title: "How do you integrate AI into your design workflow?",
+            keywords: "Keywords: vibe coding · validation · iteration",
+            meta: "2 answer angles · 3 versions",
+            detailTitle: "Story angle: human-AI workflow",
+            lines: [
+              "Situation: AI could generate fast drafts, but not product judgment.",
+              "Action: use Codex to build, then test interaction logic manually.",
+              "Result: the designer role shifts toward framing, critique and iteration.",
+            ],
+          },
+          {
+            id: "Q15",
+            status: "Ready",
+            title: "What did you learn from building a working product with AI?",
+            keywords: "Keywords: shipping · debugging · system thinking",
+            meta: "3 answer angles · 2 versions",
+            detailTitle: "Story angle: prototype to product logic",
+            lines: [
+              "Situation: a static portfolio could not demonstrate interaction thinking.",
+              "Action: build a real web MVP and document each product decision.",
+              "Result: the project shows both UX structure and technical execution.",
+            ],
+          },
+        ],
+      },
+      france: {
+        search: "France · CDI · product designer",
+        title: "Adapt the same memory system to a specific job market.",
+        description: "The product keeps recurring France-specific application questions close to the stories that support them.",
+        questions: [
+          {
+            id: "Q18",
+            status: "Customize",
+            title: "Why do you want to work in France?",
+            keywords: "Keywords: context · language · market",
+            meta: "2 answer angles · 2 versions",
+            detailTitle: "Story angle: local context",
+            lines: [
+              "Situation: French applications often ask for context and motivation.",
+              "Action: connect language, design culture and product ambition.",
+              "Result: the answer feels grounded instead of generic.",
+            ],
+          },
+          {
+            id: "Q22",
+            status: "Ready",
+            title: "How do you collaborate in multilingual teams?",
+            keywords: "Keywords: EN · FR · CN · communication",
+            meta: "2 answer angles · 3 versions",
+            detailTitle: "Story angle: multilingual collaboration",
+            lines: [
+              "Situation: design work often moves between languages and levels of detail.",
+              "Action: separate concept clarity from final phrasing.",
+              "Result: communication becomes easier to adapt without losing meaning.",
+            ],
+          },
+        ],
+      },
+    },
+    fr: {
+      motivation: {
+        search: "motivation · poste · parcours",
+        title: "Partir de la question, puis retrouver la bonne histoire.",
+        description: "La bibliothèque transforme les questions vagues en preuves préparées et réutilisables.",
+        questions: [
+          {
+            id: "Q01",
+            status: "Prêt",
+            title: "Pourquoi ce poste vous intéresse-t-il ?",
+            keywords: "Mots-clés : motivation · product design · France",
+            meta: "2 angles · 2 versions",
+            detailTitle: "Angle : adéquation avec le rôle",
+            lines: [
+              "Situation : les candidatures demandent une motivation précise.",
+              "Action : relier le poste ciblé à une expérience vérifiée.",
+              "Résultat : chaque réponse reste spécifique sans repartir de zéro.",
+            ],
+          },
+          {
+            id: "Q03",
+            status: "À adapter",
+            title: "Qu’est-ce qui différencie votre profil ?",
+            keywords: "Mots-clés : design systems · prototypage IA · contexte multilingue",
+            meta: "3 angles · 2 versions",
+            detailTitle: "Angle : profil produit hybride",
+            lines: [
+              "Situation : le profil combine UX, systèmes visuels et construction assistée par IA.",
+              "Action : présenter ce mélange comme une force produit.",
+              "Résultat : le récit devient plus lisible pour les recruteurs.",
+            ],
+          },
+        ],
+      },
+      behavioral: {
+        search: "conflit · ambiguïté · décision",
+        title: "Réutiliser une histoire vérifiée pour plusieurs questions comportementales.",
+        description: "Le produit relie les histoires fortes à des familles de questions, au lieu de mémoriser des réponses isolées.",
+        questions: [
+          {
+            id: "Q08",
+            status: "Prêt",
+            title: "Parlez d’un projet où vous avez transformé des informations confuses en système clair.",
+            keywords: "Mots-clés : architecture d’information · complexité · jugement produit",
+            meta: "3 angles · 2 versions",
+            detailTitle: "Angle : système de mémoire externe",
+            lines: [
+              "Situation : les histoires d’entretien étaient dispersées.",
+              "Action : structurer les faits avant de générer une réponse polie.",
+              "Résultat : une histoire vérifiée peut répondre à plusieurs questions.",
+            ],
+          },
+          {
+            id: "Q21",
+            status: "À vérifier",
+            title: "Parlez d’un désaccord avec des parties prenantes.",
+            keywords: "Mots-clés : alignement · contrainte · arbitrage",
+            meta: "2 angles · 1 version",
+            detailTitle: "Angle : clarté de décision",
+            lines: [
+              "Situation : les parties prenantes défendaient des résultats différents.",
+              "Action : transformer les opinions en critères partagés.",
+              "Résultat : la discussion passe de la préférence à la décision.",
+            ],
+          },
+        ],
+      },
+      ai: {
+        search: "IA · validation · prototype",
+        title: "Montrer l’IA comme une capacité de design, pas comme un raccourci.",
+        description: "Le MVP montre où l’IA aide, où le jugement humain intervient, et comment le résultat est testé.",
+        questions: [
+          {
+            id: "Q14",
+            status: "Voix à vérifier",
+            title: "Comment intégrez-vous l’IA dans votre workflow design ?",
+            keywords: "Mots-clés : vibe coding · validation · itération",
+            meta: "2 angles · 3 versions",
+            detailTitle: "Angle : workflow humain-IA",
+            lines: [
+              "Situation : l’IA génère vite, mais ne remplace pas le jugement produit.",
+              "Action : utiliser Codex pour construire, puis tester la logique d’usage.",
+              "Résultat : le rôle design se déplace vers le cadrage et l’itération.",
+            ],
+          },
+          {
+            id: "Q15",
+            status: "Prêt",
+            title: "Qu’avez-vous appris en construisant un produit fonctionnel avec l’IA ?",
+            keywords: "Mots-clés : livraison · debug · pensée système",
+            meta: "3 angles · 2 versions",
+            detailTitle: "Angle : du prototype à la logique produit",
+            lines: [
+              "Situation : un portfolio statique ne montrait pas la pensée interactive.",
+              "Action : construire un MVP web et documenter les décisions produit.",
+              "Résultat : le projet montre la structure UX et l’exécution technique.",
+            ],
+          },
+        ],
+      },
+      france: {
+        search: "France · CDI · product designer",
+        title: "Adapter le système de mémoire à un marché précis.",
+        description: "Le produit garde les questions récurrentes du marché français près des histoires qui les soutiennent.",
+        questions: [
+          {
+            id: "Q18",
+            status: "À adapter",
+            title: "Pourquoi souhaitez-vous travailler en France ?",
+            keywords: "Mots-clés : contexte · langue · marché",
+            meta: "2 angles · 2 versions",
+            detailTitle: "Angle : contexte local",
+            lines: [
+              "Situation : les candidatures françaises demandent souvent du contexte.",
+              "Action : relier langue, culture design et ambition produit.",
+              "Résultat : la réponse paraît située plutôt que générique.",
+            ],
+          },
+          {
+            id: "Q22",
+            status: "Prêt",
+            title: "Comment collaborez-vous dans des équipes multilingues ?",
+            keywords: "Mots-clés : EN · FR · CN · communication",
+            meta: "2 angles · 3 versions",
+            detailTitle: "Angle : collaboration multilingue",
+            lines: [
+              "Situation : le design circule entre langues et niveaux de détail.",
+              "Action : séparer la clarté du concept de la formulation finale.",
+              "Résultat : la communication s’adapte sans perdre le sens.",
+            ],
+          },
+        ],
+      },
+    },
+  };
+
+  let activeLanguage = "en";
+  let activeCategory = "motivation";
+  let activeQuestion = 0;
+
+  const renderDetail = () => {
+    const question = data[activeLanguage][activeCategory].questions[activeQuestion];
+    if (!question) return;
+    if (detailMode) detailMode.textContent = `Learning mode · ${activeLanguage.toUpperCase()}`;
+    if (detailTitle) detailTitle.textContent = question.detailTitle;
+    detailLines.forEach((line, index) => {
+      line.textContent = question.lines[index] || "";
+    });
+  };
+
+  const bindQuestionEvents = () => {
+    library.querySelectorAll("[data-demo-question]").forEach((card) => {
+      const activate = () => {
+        activeQuestion = Number(card.dataset.demoQuestion || 0);
+        library.querySelectorAll("[data-demo-question]").forEach((item) => {
+          const isActive = item === card;
+          item.classList.toggle("vibe-demo-question--active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+        renderDetail();
+      };
+
+      card.addEventListener("click", activate);
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activate();
+        }
+      });
+    });
+  };
+
+  const renderDemo = () => {
+    const current = data[activeLanguage][activeCategory];
+    title.textContent = current.title;
+    description.textContent = current.description;
+    search.textContent = current.search;
+    library.querySelectorAll(".vibe-demo-question").forEach((card) => card.remove());
+
+    current.questions.forEach((question, index) => {
+      const card = document.createElement("article");
+      card.className = `vibe-demo-question${index === activeQuestion ? " vibe-demo-question--active" : ""}`;
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("data-demo-question", String(index));
+      card.setAttribute("aria-pressed", String(index === activeQuestion));
+      card.innerHTML = `
+        <div><span>${question.id}</span><b>${question.status}</b></div>
+        <h2>${question.title}</h2>
+        <p>${question.keywords}</p>
+        <small>${question.meta}</small>
+      `;
+      library.insertBefore(card, library.querySelector(".vibe-demo-detail"));
+    });
+
+    renderDetail();
+    bindQuestionEvents();
+  };
+
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.demoCategory || activeCategory;
+      activeQuestion = 0;
+      categoryButtons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
+      renderDemo();
+    });
+  });
+
+  languageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeLanguage = button.dataset.demoLanguage || activeLanguage;
+      activeQuestion = 0;
+      languageButtons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("is-on", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
+      renderDemo();
+    });
+  });
+
+  bindQuestionEvents();
+};
+
+initVibeDemo();
+
 document.querySelectorAll("[data-lightbox]").forEach((button) => {
   button.addEventListener("click", () => {
     if (!lightbox || !lightboxImage) return;

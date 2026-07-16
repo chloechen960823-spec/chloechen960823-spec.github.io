@@ -1691,7 +1691,7 @@ button.evidence-card {
 }
 
 .vibe-demo-language em,
-.vibe-demo-language b {
+.vibe-demo-language button {
   padding: 0 9px;
   font-size: 12px;
   font-style: normal;
@@ -1701,11 +1701,17 @@ button.evidence-card {
   color: #837c80;
 }
 
-.vibe-demo-language b:first-of-type {
-  display: grid;
-  place-items: center;
+.vibe-demo-language button {
   min-height: 36px;
   border-radius: 10px;
+  color: #625c62;
+  background: transparent;
+  font-weight: 700;
+}
+
+.vibe-demo-language button.is-on {
+  display: grid;
+  place-items: center;
   color: #fff;
   background: linear-gradient(135deg, #8061d6, #6f4bc4 52%, #56349f);
 }
@@ -1809,10 +1815,21 @@ button.evidence-card {
 
 .vibe-demo-question {
   animation: vibeCardPulse 7s var(--ease) infinite;
+  cursor: pointer;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms var(--ease);
 }
 
 .vibe-demo-question:nth-child(2) {
   animation-delay: -2.8s;
+}
+
+.vibe-demo-question:hover,
+.vibe-demo-question:focus-visible,
+.vibe-demo-question--active {
+  border-color: rgba(111, 75, 196, 0.42);
+  box-shadow: 0 18px 38px rgba(111, 75, 196, 0.14);
+  transform: translateY(-4px);
+  outline: 0;
 }
 
 .vibe-demo-question div {

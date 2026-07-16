@@ -82,57 +82,59 @@
                   <span>Interview memory system</span>
                 </div>
               </div>
-              <button class="is-active"><span>01</span>求职动机</button>
-              <button><span>02</span>行为面试</button>
-              <button><span>03</span>AI & Design</button>
-              <button><span>04</span>法国申请</button>
+              <button class="is-active" data-demo-category="motivation" aria-pressed="true">
+                <span>01</span>Motivation
+              </button>
+              <button data-demo-category="behavioral" aria-pressed="false"><span>02</span>Behavioral</button>
+              <button data-demo-category="ai" aria-pressed="false"><span>03</span>AI & Design</button>
+              <button data-demo-category="france" aria-pressed="false"><span>04</span>France search</button>
               <div class="vibe-demo-progress"><i></i></div>
-              <small>题库完成度 · 18 / 25</small>
+              <small>Library progress · 18 / 25</small>
             </aside>
             <div class="vibe-demo-main">
               <div class="vibe-demo-app-topbar">
                 <div>
-                  <span>求职外部记忆</span>
-                  <strong>申请与面试题库</strong>
+                  <span>External career memory</span>
+                  <strong>Application & interview library</strong>
                 </div>
                 <div class="vibe-demo-language">
-                  <em>界面</em>
-                  <b>中文</b>
-                  <b>FR</b>
+                  <em>Language</em>
+                  <button class="is-on" data-demo-language="en" aria-pressed="true">EN</button>
+                  <button data-demo-language="fr" aria-pressed="false">FR</button>
                 </div>
                 <div class="vibe-demo-search">
-                  <span>搜索</span>
-                  <strong>AI · 冲突 · 复杂项目</strong>
+                  <span>Search</span>
+                  <strong data-demo-search>AI · conflict · complex project</strong>
                   <i></i>
                 </div>
               </div>
               <div class="vibe-demo-welcome">
                 <div>
                   <span>Prototype v0.5</span>
-                  <h2>不用临场重新回忆。</h2>
-                  <p>先找到问题类型，再调用已经准备好的故事和表达。</p>
+                  <h2 data-demo-title>No more rebuilding stories under pressure.</h2>
+                  <p data-demo-description>Find the question type first, then retrieve the prepared story and expression version.</p>
                 </div>
-                <strong>18<i>道题已有答案</i></strong>
+                <strong>18<i>answered prompts</i></strong>
               </div>
-              <div class="vibe-demo-library">
-                <article class="vibe-demo-question vibe-demo-question--active">
+              <div class="vibe-demo-library" data-demo-library>
+                <article class="vibe-demo-question vibe-demo-question--active" role="button" tabindex="0" data-demo-question="0" aria-pressed="true">
                   <div><span>Q08</span><b>Ready</b></div>
-                  <h2>讲一个你把混乱信息整理成清晰系统的项目。</h2>
-                  <p>关键词：信息架构 · 复杂度 · 产品判断</p>
+                  <h2>Tell me about a project where you turned messy information into a clear system.</h2>
+                  <p>Keywords: information architecture · complexity · product judgment</p>
                   <small>3 answer angles · 2 versions</small>
                 </article>
-                <article class="vibe-demo-question">
+                <article class="vibe-demo-question" role="button" tabindex="0" data-demo-question="1" aria-pressed="false">
                   <div><span>Q14</span><b>Voice check</b></div>
-                  <h2>你如何把 AI 放进自己的设计流程？</h2>
-                  <p>关键词：vibe coding · 验证 · 迭代</p>
+                  <h2>How do you integrate AI into your design workflow?</h2>
+                  <p>Keywords: vibe coding · validation · iteration</p>
                   <small>2 answer angles · 3 versions</small>
                 </article>
                 <aside class="vibe-demo-detail">
-                  <span>Learning mode · EN / FR</span>
-                  <h3>Story angle: external memory system</h3>
-                  <p><i></i> Situation: interview stories were scattered across notes and screenshots.</p>
-                  <p><i></i> Action: structure facts before generating polished answers.</p>
-                  <p><i></i> Result: one verified story can map to multiple questions.</p>
+                  <span data-demo-detail-mode>Learning mode · EN</span>
+                  <h3 data-demo-detail-title>Story angle: external memory system</h3>
+                  <p><i></i><span data-demo-detail-line="0">Situation: interview stories were scattered across notes and screenshots.</span></p>
+                  <p><i></i><span data-demo-detail-line="1">Action: structure facts before generating polished answers.</span></p>
+                  <p><i></i><span data-demo-detail-line="2">Result: one verified story can map to multiple questions.</span></p>
                   <button>Copy answer</button>
                 </aside>
               </div>
@@ -210,7 +212,7 @@
               <div><button>EN</button><button class="is-on">FR</button></div>
               <p class="mini-line"></p>
               <p class="mini-line short"></p>
-              <p class="mini-translation">中文解释逐句展开</p>
+              <p class="mini-translation">Sentence-by-sentence support opens when needed</p>
             </div>
             <h3>Practice in language versions.</h3>
             <p>Answers can move between English, French and Chinese support without rebuilding the content model.</p>
@@ -348,6 +350,6 @@
       </div>
     </main>
 
-    <script src="./src/main.js?v=18"></script>
+    <script src="./src/main.js?v=19"></script>
   </body>
 </html>
