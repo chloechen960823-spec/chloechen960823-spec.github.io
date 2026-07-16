@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interview Memory System, a vibe-coded product MVP by Chloé Chen."
+    />
+    <title>Interview Memory System — Chloé Chen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css?v=24" />
+  </head>
+  <body class="is-loading" data-page="case">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-mark"><span>Vibe</span><i></i></div>
+      <p>AI product case</p>
+    </div>
+    <div class="page-texture" aria-hidden="true"></div>
+
+    <header class="header" aria-label="Portfolio navigation">
+      <a class="brand" href="./index.html" aria-label="Chloé Chen home">
+        <span>CC</span>
+        <strong>Chloé Chen</strong>
+      </a>
+      <div class="header-center">
+        <span>Product designer</span>
+        <span>Vibe coding project</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a class="is-active" href="./work.html">Work</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="case case--vibe" id="main">
+      <section class="case-hero case-hero--vibe">
+        <div class="case-title reveal">
+          <p class="eyebrow">Vibe coding · AI-assisted MVP</p>
+          <h1>Interview Memory System</h1>
+          <p class="case-lede">
+            A personal AI product that turns scattered career memories into reusable interview stories,
+            without exposing private material or relying on generic AI answers.
+          </p>
+        </div>
+        <dl class="case-meta reveal">
+          <div>
+            <dt>Role</dt>
+            <dd>Product designer · AI product builder</dd>
+          </div>
+          <div>
+            <dt>Built with</dt>
+            <dd>Codex · HTML/CSS/JS · Markdown/YAML</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>UX architecture · privacy · human-AI workflow</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="vibe-product-stage reveal" aria-label="Animated product preview">
+        <div class="vibe-demo-window">
+          <div class="vibe-demo-bar">
+            <span></span><span></span><span></span>
+            <strong>Chloé Library</strong>
+          </div>
+          <div class="vibe-demo-grid">
+            <aside class="vibe-demo-sidebar">
+              <p>Interview memory system</p>
+              <button class="is-active">Stories</button>
+              <button>Questions</button>
+              <button>Versions</button>
+              <button>Export</button>
+              <div class="vibe-demo-progress"><i></i></div>
+              <small>18 / 25 prompts mapped</small>
+            </aside>
+            <div class="vibe-demo-main">
+              <div class="vibe-demo-search">
+                <span>Search</span>
+                <strong>complex project · AI · conflict</strong>
+                <i></i>
+              </div>
+              <div class="vibe-demo-cards">
+                <article class="vibe-demo-card vibe-demo-card--one">
+                  <span>Ready to use</span>
+                  <h2>Tell me about a complex product decision.</h2>
+                  <p>Mapped to: system thinking, ambiguity, stakeholder alignment.</p>
+                </article>
+                <article class="vibe-demo-card vibe-demo-card--two">
+                  <span>Needs voice check</span>
+                  <h2>How do you use AI in your design process?</h2>
+                  <p>Drafted by AI, then rewritten into my own vocabulary.</p>
+                </article>
+              </div>
+              <div class="vibe-demo-answer">
+                <span>Story angle</span>
+                <p><i></i> Situation: scattered project material, repeated interview pressure.</p>
+                <p><i></i> Action: design a retrieval system before polishing answers.</p>
+                <p><i></i> Result: one verified story can answer multiple questions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="vibe-stage-note">
+          Public demo uses synthetic content. The real answer library stays private.
+        </p>
+      </section>
+
+      <section class="vibe-story-section vibe-story-section--problem">
+        <div class="vibe-section-number reveal">01</div>
+        <div class="vibe-story-copy reveal">
+          <p class="eyebrow">Starting from a real pain point</p>
+          <h2>I did not need prettier interview answers. I needed a memory system.</h2>
+          <p>
+            The problem was not a lack of effort. After several projects, job applications and interview
+            prep sessions, the useful evidence was scattered across notes, screenshots and conversations.
+            Under pressure, it became hard to retrieve the right story, choose the right angle and say it in
+            a voice that still sounded like me.
+          </p>
+        </div>
+        <div class="vibe-pain-grid reveal">
+          <article>
+            <span>Recall</span>
+            <p>Project details disappear exactly when I need them.</p>
+          </article>
+          <article>
+            <span>Structure</span>
+            <p>One experience can answer many questions, but the mapping is hard to see.</p>
+          </article>
+          <article>
+            <span>Authenticity</span>
+            <p>AI can produce polished answers that sound professional but not personal.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="vibe-method-section">
+        <div class="vibe-story-copy reveal">
+          <p class="eyebrow">Product framing</p>
+          <h2>A small product, not a prompt dump.</h2>
+          <p>
+            I reframed the tool as a retrieval and transformation loop: capture real memories, attach them
+            to reusable story angles, map those angles to interview questions, then create language versions
+            that can be practiced, edited and trusted.
+          </p>
+        </div>
+        <div class="vibe-flow reveal" aria-label="Product information architecture">
+          <div><span>1</span><strong>Project memory</strong><p>Facts, constraints, decisions, evidence.</p></div>
+          <div><span>2</span><strong>Story angle</strong><p>Conflict, impact, AI usage, system thinking.</p></div>
+          <div><span>3</span><strong>Question mapping</strong><p>Reuse one story across several interview prompts.</p></div>
+          <div><span>4</span><strong>Expression version</strong><p>Real chat, formal interview, EN/FR learning.</p></div>
+        </div>
+      </section>
+
+      <section class="vibe-build-section">
+        <div class="vibe-build-orbit reveal" aria-hidden="true">
+          <span>Prompt</span>
+          <span>Build</span>
+          <span>Test</span>
+          <span>Refine</span>
+        </div>
+        <div class="vibe-story-copy reveal">
+          <p class="eyebrow">Vibe coding workflow</p>
+          <h2>Conversational building, but with product judgment.</h2>
+          <p>
+            I used Codex as a coding partner: describe the intent, inspect the result in the browser,
+            identify UX gaps, rewrite the interaction model, and repeat. The design work moved from drawing
+            static screens to shaping behavior, data structure, edge cases and privacy boundaries.
+          </p>
+        </div>
+      </section>
+
+      <section class="vibe-system-section">
+        <div class="vibe-story-copy reveal">
+          <p class="eyebrow">Trust model</p>
+          <h2>Every answer needs a provenance state.</h2>
+          <p>
+            Because the product handles personal career stories, the key design decision was to make answer
+            reliability visible. A polished paragraph is not finished until it can be traced back to a real
+            experience and spoken naturally.
+          </p>
+        </div>
+        <div class="vibe-status-board reveal">
+          <span>candidate original</span>
+          <span>verified experience</span>
+          <span>co-reconstructed</span>
+          <span>AI draft</span>
+          <span>needs fact check</span>
+          <span>needs voice check</span>
+          <span>ready to use</span>
+        </div>
+      </section>
+
+      <section class="vibe-release-section">
+        <div class="vibe-story-copy reveal">
+          <p class="eyebrow">MVP shipped</p>
+          <h2>From answer list to multilingual learning product.</h2>
+        </div>
+        <div class="vibe-release-timeline reveal">
+          <article>
+            <span>v0.1</span>
+            <p>Question library, EN/FR answer versions, learning mode and local progress.</p>
+          </article>
+          <article>
+            <span>v0.3</span>
+            <p>Multiple answer contexts: real chat, formal interview and alternate framing.</p>
+          </article>
+          <article>
+            <span>v0.4</span>
+            <p>Separated answer content from expression style to keep structure flexible.</p>
+          </article>
+          <article>
+            <span>v0.5</span>
+            <p>Chinese/French interface toggle, localized search and exportable data.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="vibe-privacy-section reveal">
+        <div>
+          <p class="eyebrow">Privacy by design</p>
+          <h2>The public portfolio does not expose the private library.</h2>
+        </div>
+        <p>
+          The case study shows the product architecture, interaction model and AI collaboration process with
+          anonymized examples. Real interview answers, personal stories and application material stay outside
+          the public site. This constraint became part of the UX: useful enough to demonstrate, careful enough
+          to be trustworthy.
+        </p>
+      </section>
+
+      <section class="impact impact--vibe">
+        <div class="impact-copy reveal">
+          <p class="eyebrow">What this project demonstrates</p>
+          <h3>A product designer can now prototype the system, not just the screen.</h3>
+          <p>
+            This project shows AI-native product thinking: identifying a personal workflow problem, turning it
+            into an information architecture, shipping a browser MVP, and designing safeguards around voice,
+            truth and privacy.
+          </p>
+        </div>
+        <div class="impact-points reveal">
+          <p><span>01</span> Human problem before AI solution.</p>
+          <p><span>02</span> Clear content model and reusable story logic.</p>
+          <p><span>03</span> Public demo separated from private data.</p>
+          <p><span>04</span> Fast shipping through iterative human-AI collaboration.</p>
+        </div>
+      </section>
+
+      <div class="project-next">
+        <a class="round-link" href="./work.html"><span>Back to work</span><i aria-hidden="true">↑</i></a>
+        <a class="round-link" href="./wms-design-system.html"><span>Next project</span><i aria-hidden="true">↓</i></a>
+      </div>
+    </main>
+
+    <script src="./src/main.js?v=18"></script>
+  </body>
+</html>
