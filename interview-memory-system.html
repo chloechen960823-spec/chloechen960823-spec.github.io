@@ -68,44 +68,73 @@
       </section>
 
       <section class="vibe-product-stage reveal" aria-label="Animated product preview">
-        <div class="vibe-demo-window">
+        <div class="vibe-demo-window vibe-demo-window--library">
           <div class="vibe-demo-bar">
             <span></span><span></span><span></span>
-            <strong>Chloé Library</strong>
+            <strong>Prototype v0.5 · sanitized product demo</strong>
           </div>
           <div class="vibe-demo-grid">
             <aside class="vibe-demo-sidebar">
-              <p>Interview memory system</p>
-              <button class="is-active">Stories</button>
-              <button>Questions</button>
-              <button>Versions</button>
-              <button>Export</button>
+              <div class="vibe-demo-brand">
+                <i>C</i>
+                <div>
+                  <strong>Chloe Library</strong>
+                  <span>Interview memory system</span>
+                </div>
+              </div>
+              <button class="is-active"><span>01</span>求职动机</button>
+              <button><span>02</span>行为面试</button>
+              <button><span>03</span>AI & Design</button>
+              <button><span>04</span>法国申请</button>
               <div class="vibe-demo-progress"><i></i></div>
-              <small>18 / 25 prompts mapped</small>
+              <small>题库完成度 · 18 / 25</small>
             </aside>
             <div class="vibe-demo-main">
-              <div class="vibe-demo-search">
-                <span>Search</span>
-                <strong>complex project · AI · conflict</strong>
-                <i></i>
+              <div class="vibe-demo-app-topbar">
+                <div>
+                  <span>求职外部记忆</span>
+                  <strong>申请与面试题库</strong>
+                </div>
+                <div class="vibe-demo-language">
+                  <em>界面</em>
+                  <b>中文</b>
+                  <b>FR</b>
+                </div>
+                <div class="vibe-demo-search">
+                  <span>搜索</span>
+                  <strong>AI · 冲突 · 复杂项目</strong>
+                  <i></i>
+                </div>
               </div>
-              <div class="vibe-demo-cards">
-                <article class="vibe-demo-card vibe-demo-card--one">
-                  <span>Ready to use</span>
-                  <h2>Tell me about a complex product decision.</h2>
-                  <p>Mapped to: system thinking, ambiguity, stakeholder alignment.</p>
-                </article>
-                <article class="vibe-demo-card vibe-demo-card--two">
-                  <span>Needs voice check</span>
-                  <h2>How do you use AI in your design process?</h2>
-                  <p>Drafted by AI, then rewritten into my own vocabulary.</p>
-                </article>
+              <div class="vibe-demo-welcome">
+                <div>
+                  <span>Prototype v0.5</span>
+                  <h2>不用临场重新回忆。</h2>
+                  <p>先找到问题类型，再调用已经准备好的故事和表达。</p>
+                </div>
+                <strong>18<i>道题已有答案</i></strong>
               </div>
-              <div class="vibe-demo-answer">
-                <span>Story angle</span>
-                <p><i></i> Situation: scattered project material, repeated interview pressure.</p>
-                <p><i></i> Action: design a retrieval system before polishing answers.</p>
-                <p><i></i> Result: one verified story can answer multiple questions.</p>
+              <div class="vibe-demo-library">
+                <article class="vibe-demo-question vibe-demo-question--active">
+                  <div><span>Q08</span><b>Ready</b></div>
+                  <h2>讲一个你把混乱信息整理成清晰系统的项目。</h2>
+                  <p>关键词：信息架构 · 复杂度 · 产品判断</p>
+                  <small>3 answer angles · 2 versions</small>
+                </article>
+                <article class="vibe-demo-question">
+                  <div><span>Q14</span><b>Voice check</b></div>
+                  <h2>你如何把 AI 放进自己的设计流程？</h2>
+                  <p>关键词：vibe coding · 验证 · 迭代</p>
+                  <small>2 answer angles · 3 versions</small>
+                </article>
+                <aside class="vibe-demo-detail">
+                  <span>Learning mode · EN / FR</span>
+                  <h3>Story angle: external memory system</h3>
+                  <p><i></i> Situation: interview stories were scattered across notes and screenshots.</p>
+                  <p><i></i> Action: structure facts before generating polished answers.</p>
+                  <p><i></i> Result: one verified story can map to multiple questions.</p>
+                  <button>Copy answer</button>
+                </aside>
               </div>
             </div>
           </div>
@@ -139,6 +168,63 @@
           <article>
             <span>Authenticity</span>
             <p>AI can produce polished answers that sound professional but not personal.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="vibe-interaction-section">
+        <div class="vibe-story-copy reveal">
+          <p class="eyebrow">Interaction logic</p>
+          <h2>The MVP is designed around a retrieval loop, not a static answer list.</h2>
+          <p>
+            Each screen state answers a specific behavior: find the right question, inspect the story behind
+            it, choose the expression mode, then export or keep practicing without leaking private content.
+          </p>
+        </div>
+        <div class="vibe-interaction-grid reveal">
+          <article>
+            <span>01 · Search</span>
+            <div class="mini-app mini-app--search">
+              <div class="mini-search">AI · conflit · projet complexe<i></i></div>
+              <p class="mini-card is-hot">Q14 · How do you use AI in design?</p>
+              <p class="mini-card">Q08 · Complex product decision</p>
+              <p class="mini-card">Q21 · Stakeholder alignment</p>
+            </div>
+            <h3>Search by messy memory.</h3>
+            <p>Keywords work across Chinese, French and English so the user can start from whatever wording they remember.</p>
+          </article>
+          <article>
+            <span>02 · Detail</span>
+            <div class="mini-app mini-app--detail">
+              <b>Story angle</b>
+              <p><i></i> Real project fact</p>
+              <p><i></i> Interview framing</p>
+              <p><i></i> Evidence to verify</p>
+            </div>
+            <h3>Separate fact from expression.</h3>
+            <p>The detail view keeps the underlying experience visible before any polished answer is trusted.</p>
+          </article>
+          <article>
+            <span>03 · Learn</span>
+            <div class="mini-app mini-app--learn">
+              <div><button>EN</button><button class="is-on">FR</button></div>
+              <p class="mini-line"></p>
+              <p class="mini-line short"></p>
+              <p class="mini-translation">中文解释逐句展开</p>
+            </div>
+            <h3>Practice in language versions.</h3>
+            <p>Answers can move between English, French and Chinese support without rebuilding the content model.</p>
+          </article>
+          <article>
+            <span>04 · Export</span>
+            <div class="mini-app mini-app--export">
+              <strong>Export package</strong>
+              <p>answers.json</p>
+              <p>progress.local</p>
+              <p class="locked">private stories excluded</p>
+            </div>
+            <h3>Keep public and private apart.</h3>
+            <p>The product can demonstrate its structure publicly while the real application material stays private.</p>
           </article>
         </div>
       </section>

@@ -1511,6 +1511,11 @@ button.evidence-card {
   box-shadow: 0 60px 120px rgba(52, 67, 20, 0.16);
 }
 
+.vibe-demo-window--library {
+  color: #27222c;
+  background: #f5f3ee;
+}
+
 .vibe-demo-bar {
   display: flex;
   align-items: center;
@@ -1550,11 +1555,37 @@ button.evidence-card {
   background: rgba(255, 255, 255, 0.42);
 }
 
-.vibe-demo-sidebar p {
+.vibe-demo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 18px;
-  font-family: var(--font-serif);
-  font-size: 32px;
-  line-height: 0.96;
+}
+
+.vibe-demo-brand i {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  color: #fff;
+  background: linear-gradient(135deg, #8061d6, #6f4bc4 52%, #56349f);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.vibe-demo-brand strong,
+.vibe-demo-brand span {
+  display: block;
+}
+
+.vibe-demo-brand strong {
+  font-size: 15px;
+}
+
+.vibe-demo-brand span {
+  color: #837c80;
+  font-size: 11px;
 }
 
 .vibe-demo-sidebar button {
@@ -1567,9 +1598,16 @@ button.evidence-card {
   font-size: 13px;
 }
 
+.vibe-demo-sidebar button span {
+  margin-right: 10px;
+  color: #6f4bc4;
+  font-weight: 700;
+}
+
 .vibe-demo-sidebar button.is-active {
-  color: #fff;
-  background: #6f4bc4;
+  color: #4f2e91;
+  background: #ebe3f8;
+  font-weight: 600;
 }
 
 .vibe-demo-progress {
@@ -1595,8 +1633,8 @@ button.evidence-card {
 
 .vibe-demo-main {
   position: relative;
-  display: grid;
-  grid-template-rows: auto auto 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 22px;
   padding: 32px;
   overflow: hidden;
@@ -1616,9 +1654,66 @@ button.evidence-card {
     radial-gradient(circle at 67% 66%, rgba(221, 209, 239, 0.76), transparent 48%);
 }
 
+.vibe-demo-app-topbar {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.8fr) auto minmax(240px, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.vibe-demo-app-topbar > div:first-child span,
+.vibe-demo-welcome span {
+  display: block;
+  color: #6f4bc4;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vibe-demo-app-topbar > div:first-child strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 28px;
+}
+
+.vibe-demo-language {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  min-height: 46px;
+  padding: 4px;
+  border: 1px solid #e2ddd4;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.vibe-demo-language em,
+.vibe-demo-language b {
+  padding: 0 9px;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.vibe-demo-language em {
+  color: #837c80;
+}
+
+.vibe-demo-language b:first-of-type {
+  display: grid;
+  place-items: center;
+  min-height: 36px;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #8061d6, #6f4bc4 52%, #56349f);
+}
+
 .vibe-demo-search,
-.vibe-demo-card,
-.vibe-demo-answer {
+.vibe-demo-welcome,
+.vibe-demo-question,
+.vibe-demo-detail {
   position: relative;
   z-index: 2;
   border: 1px solid rgba(52, 67, 20, 0.12);
@@ -1628,95 +1723,194 @@ button.evidence-card {
 
 .vibe-demo-search {
   display: grid;
-  grid-template-columns: 82px 1fr 18px;
+  grid-template-columns: 48px 1fr 10px;
   align-items: center;
-  min-height: 58px;
-  padding: 0 18px;
-  border-radius: 18px;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 15px;
 }
 
-.vibe-demo-search span,
-.vibe-demo-card span,
-.vibe-demo-answer span {
-  color: var(--ink-soft);
+.vibe-demo-search span {
+  color: #837c80;
   font-size: 12px;
-  text-transform: uppercase;
 }
 
 .vibe-demo-search strong {
+  font-size: 13px;
   font-weight: 500;
 }
 
 .vibe-demo-search i {
-  width: 8px;
-  height: 24px;
+  width: 2px;
+  height: 20px;
   background: #6f4bc4;
   animation: vibeCaret 820ms steps(2, jump-none) infinite;
 }
 
-.vibe-demo-cards {
+.vibe-demo-welcome {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  min-height: 160px;
+  padding: 28px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(128, 97, 214, 0.15) 0%, rgba(128, 97, 214, 0) 34%),
+    linear-gradient(135deg, #fffefa 0%, #f8f6ff 54%, #f8f5ef 100%);
 }
 
-.vibe-demo-card {
-  min-height: 210px;
-  padding: 22px;
-  border-radius: 24px;
+.vibe-demo-welcome h2 {
+  margin-top: 10px;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.1;
+}
+
+.vibe-demo-welcome p {
+  margin-top: 8px;
+  color: #625c62;
+}
+
+.vibe-demo-welcome > strong {
+  display: grid;
+  place-items: center;
+  width: 118px;
+  height: 118px;
+  border: 1px solid rgba(111, 75, 196, 0.18);
+  border-radius: 22px;
+  color: #6f4bc4;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 36px;
+}
+
+.vibe-demo-welcome > strong i {
+  display: block;
+  color: #625c62;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.vibe-demo-library {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(280px, 0.86fr);
+  gap: 16px;
+}
+
+.vibe-demo-question,
+.vibe-demo-detail {
+  min-height: 236px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(56, 45, 34, 0.04);
+}
+
+.vibe-demo-question {
   animation: vibeCardPulse 7s var(--ease) infinite;
 }
 
-.vibe-demo-card--two {
-  animation-delay: -3.2s;
+.vibe-demo-question:nth-child(2) {
+  animation-delay: -2.8s;
 }
 
-.vibe-demo-card h2 {
-  margin-top: 38px;
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 3vw, 46px);
-  font-weight: 400;
-  line-height: 0.96;
+.vibe-demo-question div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.vibe-demo-card p {
-  margin-top: 16px;
-  color: var(--ink-soft);
+.vibe-demo-question span {
+  color: #6f4bc4;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
-.vibe-demo-answer {
-  align-self: end;
-  min-height: 210px;
-  padding: 24px;
-  border-radius: 24px;
+.vibe-demo-question b {
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #4f2e91;
+  background: #ebe3f8;
+  font-size: 11px;
 }
 
-.vibe-demo-answer p {
+.vibe-demo-question h2 {
+  margin-top: 22px;
+  font-size: 18px;
+  line-height: 1.32;
+}
+
+.vibe-demo-question p,
+.vibe-demo-question small,
+.vibe-demo-detail p {
+  color: #625c62;
+}
+
+.vibe-demo-question p {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.vibe-demo-question small {
+  display: block;
+  margin-top: 28px;
+  font-size: 11px;
+}
+
+.vibe-demo-detail {
+  background: #fff;
+}
+
+.vibe-demo-detail span {
+  color: #6f4bc4;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.vibe-demo-detail h3 {
+  margin-top: 14px;
+  font-size: 18px;
+}
+
+.vibe-demo-detail p {
   display: grid;
   grid-template-columns: 18px 1fr;
-  gap: 12px;
+  gap: 8px;
   align-items: baseline;
-  max-width: 780px;
-  margin-top: 18px;
-  color: var(--ink-soft);
-  font-size: 18px;
+  margin-top: 12px;
+  font-size: 13px;
   opacity: 0.5;
   animation: vibeLineFocus 6s var(--ease) infinite;
 }
 
-.vibe-demo-answer p:nth-child(3) {
+.vibe-demo-detail p:nth-of-type(2) {
   animation-delay: 1.2s;
 }
 
-.vibe-demo-answer p:nth-child(4) {
+.vibe-demo-detail p:nth-of-type(3) {
   animation-delay: 2.4s;
 }
 
-.vibe-demo-answer i {
+.vibe-demo-detail i {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #6f4bc4;
+}
+
+.vibe-demo-detail button {
+  min-height: 38px;
+  margin-top: 16px;
+  padding: 0 14px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #8061d6, #6f4bc4 52%, #56349f);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .vibe-stage-note {
@@ -1727,6 +1921,7 @@ button.evidence-card {
 }
 
 .vibe-story-section,
+.vibe-interaction-section,
 .vibe-method-section,
 .vibe-build-section,
 .vibe-system-section,
@@ -1802,6 +1997,174 @@ button.evidence-card {
   font-family: var(--font-serif);
   font-size: clamp(25px, 2.4vw, 38px);
   line-height: 1;
+}
+
+.vibe-interaction-grid {
+  grid-column: 2 / 7;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 3vh;
+}
+
+.vibe-interaction-grid article {
+  min-height: 520px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.vibe-interaction-grid article > span {
+  color: #6f4bc4;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.vibe-interaction-grid h3 {
+  margin-top: 22px;
+  font-family: var(--font-serif);
+  font-size: clamp(25px, 2.4vw, 38px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.vibe-interaction-grid article > p {
+  margin-top: 12px;
+  color: var(--ink-soft);
+}
+
+.mini-app {
+  min-height: 250px;
+  margin-top: 18px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid #e2ddd4;
+  border-radius: 18px;
+  background: #f5f3ee;
+  box-shadow: 0 12px 32px rgba(56, 45, 34, 0.07);
+}
+
+.mini-search {
+  position: relative;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 34px 0 14px;
+  border: 1px solid #e2ddd4;
+  border-radius: 14px;
+  background: #fff;
+  color: #625c62;
+  font-size: 13px;
+}
+
+.mini-search i {
+  position: absolute;
+  right: 14px;
+  width: 2px;
+  height: 18px;
+  background: #6f4bc4;
+  animation: vibeCaret 820ms steps(2, jump-none) infinite;
+}
+
+.mini-card {
+  margin: 12px 0 0;
+  padding: 13px;
+  border: 1px solid #e2ddd4;
+  border-radius: 14px;
+  background: #fff;
+  color: #625c62;
+  font-size: 13px;
+}
+
+.mini-card.is-hot {
+  color: #4f2e91;
+  background: #ebe3f8;
+  animation: vibeCardPulse 6s var(--ease) infinite;
+}
+
+.mini-app--detail b,
+.mini-app--export strong {
+  color: #6f4bc4;
+}
+
+.mini-app--detail p {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 8px;
+  margin: 16px 0 0;
+  color: #625c62;
+  font-size: 13px;
+}
+
+.mini-app--detail i {
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: #6f4bc4;
+}
+
+.mini-app--learn div {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #e2ddd4;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.mini-app--learn button {
+  min-width: 48px;
+  min-height: 36px;
+  border-radius: 10px;
+  background: transparent;
+  color: #625c62;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mini-app--learn button.is-on {
+  color: #fff;
+  background: linear-gradient(135deg, #8061d6, #6f4bc4 52%, #56349f);
+}
+
+.mini-line {
+  height: 13px;
+  margin: 24px 0 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d7c9f2, #fff);
+  animation: vibeProgress 6s var(--ease) infinite alternate;
+}
+
+.mini-line.short {
+  width: 68%;
+  animation-delay: -2s;
+}
+
+.mini-translation {
+  margin-top: 22px;
+  padding: 14px;
+  border-radius: 14px;
+  color: #4f2e91;
+  background: #ebe3f8;
+  font-size: 13px;
+}
+
+.mini-app--export p {
+  margin: 16px 0 0;
+  padding: 12px;
+  border: 1px solid #e2ddd4;
+  border-radius: 14px;
+  background: #fff;
+  color: #625c62;
+  font-size: 13px;
+}
+
+.mini-app--export p.locked {
+  color: #8c2520;
+  background: #fae8e6;
 }
 
 .vibe-flow {
@@ -2213,6 +2576,7 @@ button.evidence-card {
   .evidence-grid,
   .impact,
   .vibe-story-section,
+  .vibe-interaction-section,
   .vibe-method-section,
   .vibe-build-section,
   .vibe-system-section,
@@ -2236,6 +2600,7 @@ button.evidence-card {
   .vibe-section-number,
   .vibe-story-copy,
   .vibe-pain-grid,
+  .vibe-interaction-grid,
   .vibe-flow,
   .vibe-build-orbit,
   .vibe-status-board,
@@ -2386,11 +2751,20 @@ button.evidence-card {
     border-bottom: 1px solid rgba(52, 67, 20, 0.12);
   }
 
-  .vibe-demo-cards,
   .vibe-pain-grid,
+  .vibe-interaction-grid,
   .vibe-flow,
   .vibe-release-timeline {
     grid-template-columns: 1fr;
+  }
+
+  .vibe-demo-app-topbar,
+  .vibe-demo-library {
+    grid-template-columns: 1fr;
+  }
+
+  .vibe-demo-language {
+    justify-self: start;
   }
 
   .vibe-flow {
@@ -2554,10 +2928,6 @@ button.evidence-card {
     padding: 20px;
   }
 
-  .vibe-demo-sidebar p {
-    font-size: 28px;
-  }
-
   .vibe-demo-search {
     grid-template-columns: 1fr 18px;
     gap: 8px;
@@ -2567,10 +2937,19 @@ button.evidence-card {
     display: none;
   }
 
-  .vibe-demo-card h2,
+  .vibe-demo-welcome > strong {
+    width: 96px;
+    height: 96px;
+  }
+
+  .vibe-demo-question h2,
   .vibe-pain-grid p,
   .vibe-release-timeline p {
     font-size: 28px;
+  }
+
+  .vibe-interaction-grid article {
+    min-height: auto;
   }
 
   .vibe-build-orbit span {
