@@ -530,6 +530,76 @@ const initVibeDemo = () => {
 
 initVibeDemo();
 
+const initLVVDemo = () => {
+  const demo = document.querySelector("[data-lvv-demo]");
+  if (!demo) return;
+
+  const buttons = Array.from(demo.querySelectorAll("[data-lvv-step]"));
+  const image = demo.querySelector("[data-lvv-image]");
+  const status = demo.querySelector("[data-lvv-status]");
+  const number = demo.querySelector("[data-lvv-number]");
+  const note = demo.querySelector("[data-lvv-note]");
+  const steps = [
+    {
+      src: "./assets/lvv/01-start.png",
+      alt: "Original multilingual LVV delivery service start screen",
+      status: "Language and service entry",
+      note: "Set language and frame the assisted service before the order begins.",
+    },
+    {
+      src: "./assets/lvv/02-destination.png",
+      alt: "Original destination selection screen with popular countries and search",
+      status: "Destination first",
+      note: "Destination narrows carrier, price, time, insurance and required information.",
+    },
+    {
+      src: "./assets/lvv/03-service.png",
+      alt: "Original carrier comparison screen showing speed and starting price",
+      status: "Comparable service trade-offs",
+      note: "Consistent rows and labels turn carrier options into price and speed decisions.",
+    },
+    {
+      src: "./assets/lvv/04-item.png",
+      alt: "Original item information screen with structured fields and optional photos",
+      status: "Structured item evidence",
+      note: "Brand, description, quantity and optional photos reduce ambiguous free text.",
+    },
+    {
+      src: "./assets/lvv/05-finish.png",
+      alt: "Original order completion screen with order number and staff handoff instruction",
+      status: "Order created, service continues",
+      note: "The product ends by exposing the order and handing payment and operations back to staff.",
+    },
+  ];
+
+  const showStep = (index) => {
+    const step = steps[index];
+    if (!step || !image) return;
+
+    image.classList.add("is-changing");
+    window.setTimeout(() => {
+      image.src = step.src;
+      image.alt = step.alt;
+      if (status) status.textContent = step.status;
+      if (number) number.textContent = `${String(index + 1).padStart(2, "0")} / 05`;
+      if (note) note.textContent = step.note;
+      image.classList.remove("is-changing");
+    }, prefersReducedMotion ? 0 : 140);
+
+    buttons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === index;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", String(isActive));
+    });
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => showStep(Number(button.dataset.lvvStep || 0)));
+  });
+};
+
+initLVVDemo();
+
 document.querySelectorAll("[data-lightbox]").forEach((button) => {
   button.addEventListener("click", () => {
     if (!lightbox || !lightboxImage) return;
