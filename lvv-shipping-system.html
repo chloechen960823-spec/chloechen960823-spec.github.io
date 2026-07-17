@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/styles.css?v=26" />
+    <link rel="stylesheet" href="./src/styles.css?v=27" />
   </head>
   <body class="is-loading lvv-page" data-page="case">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -195,9 +195,86 @@
         </div>
       </section>
 
-      <section class="lvv-prototype">
+      <section class="lvv-system" id="system">
         <div class="lvv-section-label reveal">
           <span>05</span>
+          <p>Systemise</p>
+        </div>
+        <div class="lvv-section-copy reveal">
+          <p class="eyebrow">A project-level component system</p>
+          <h2>Shared rules for seven steps, three languages and one hand-off.</h2>
+          <p>
+            Repeating navigation, actions and form states screen by screen would invite drift. I turned
+            the recurring interaction logic into reusable components so design reviews and front-end
+            implementation could refer to the same states.
+          </p>
+        </div>
+
+        <div class="lvv-system-demo reveal" data-lvv-system>
+          <div class="lvv-system-head">
+            <div>
+              <span>Original component logic</span>
+              <strong>Retrospectively re-presented for clarity</strong>
+            </div>
+            <p>Choose a step to inspect the shared state model.</p>
+          </div>
+
+          <div class="lvv-system-progress" role="tablist" aria-label="Seven-step component states">
+            <button class="is-current" type="button" role="tab" aria-selected="true" data-system-step="0"><span>1</span><small>Destination</small></button>
+            <button type="button" role="tab" aria-selected="false" data-system-step="1"><span>2</span><small>Weight</small></button>
+            <button type="button" role="tab" aria-selected="false" data-system-step="2"><span>3</span><small>Services</small></button>
+            <button type="button" role="tab" aria-selected="false" data-system-step="3"><span>4</span><small>Item</small></button>
+            <button type="button" role="tab" aria-selected="false" data-system-step="4"><span>5</span><small>Contact</small></button>
+            <button type="button" role="tab" aria-selected="false" data-system-step="5"><span>6</span><small>Insurance</small></button>
+            <button type="button" role="tab" aria-selected="false" data-system-step="6"><span>7</span><small>Finish</small></button>
+          </div>
+
+          <div class="lvv-system-state" aria-live="polite">
+            <div>
+              <span data-system-counter>Step 01 / 07</span>
+              <h3 data-system-title>Where is the parcel going?</h3>
+              <p data-system-helper>Destination sets the rules for every decision that follows.</p>
+            </div>
+            <div class="lvv-system-field">
+              <label for="system-preview">Country / region</label>
+              <div id="system-preview"><span data-system-value>France</span><i aria-hidden="true">⌄</i></div>
+            </div>
+          </div>
+
+          <div class="lvv-system-actions" aria-label="Shared action hierarchy">
+            <button type="button" class="is-secondary">← Return</button>
+            <button type="button" class="is-danger">Cancel this order</button>
+            <button type="button" class="is-primary" data-system-action>Continue →</button>
+          </div>
+        </div>
+
+        <div class="lvv-system-patterns reveal">
+          <article>
+            <span>01 · Navigation</span>
+            <h3>One state model</h3>
+            <p>Complete, current and upcoming steps use the same visual and behavioral rules across the flow.</p>
+          </article>
+          <article>
+            <span>02 · Actions</span>
+            <h3>One hierarchy</h3>
+            <p>Return, cancel and continue remain predictable while labels adapt to the task.</p>
+          </article>
+          <article>
+            <span>03 · Content</span>
+            <h3>Three languages</h3>
+            <p>Flexible components absorb English, French and Chinese labels without rebuilding each screen.</p>
+          </article>
+        </div>
+
+        <div class="lvv-system-reflection reveal">
+          <p><span>What it created</span>Interaction consistency, faster iteration and a clearer implementation contract.</p>
+          <p><span>What it did not prove</span>Accessibility quality, live-store usability or long-term operational ownership.</p>
+        </div>
+      </section>
+
+      <section class="lvv-prototype">
+        <div class="lvv-section-label reveal">
+          <span>06</span>
           <p>Prototype</p>
         </div>
         <div class="lvv-section-copy reveal">
@@ -230,7 +307,7 @@
 
       <section class="lvv-validation">
         <div class="lvv-section-label reveal">
-          <span>06</span>
+          <span>07</span>
           <p>Validate</p>
         </div>
         <div class="lvv-section-copy reveal">
@@ -261,7 +338,7 @@
 
       <section class="lvv-critique">
         <div class="lvv-section-label reveal">
-          <span>07</span>
+          <span>08</span>
           <p>Look again</p>
         </div>
         <div class="lvv-section-copy reveal">
@@ -289,7 +366,7 @@
 
       <section class="lvv-outcome">
         <div class="lvv-section-label reveal">
-          <span>08</span>
+          <span>09</span>
           <p>Deliver & learn</p>
         </div>
         <div class="lvv-outcome-copy reveal">
@@ -356,6 +433,6 @@
       </section>
     </main>
 
-    <script src="./src/main.js?v=19"></script>
+    <script src="./src/main.js?v=20"></script>
   </body>
 </html>

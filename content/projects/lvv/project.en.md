@@ -97,6 +97,24 @@ The completion screen exposes the order number, amount and next staff-assisted s
 - Development handoff;
 - Front-end implementation.
 
+### Why I created a project-level component system
+
+**Decision**
+
+The seven-step flow repeatedly used progress states, Return / Cancel / Confirm actions, form and selection states, and multilingual controls. Designing each screen independently would allow the same interaction to drift visually and behaviorally. I therefore translated recurring rules into reusable project-level components and states.
+
+**Value in this project**
+
+- Kept complete, current and upcoming states consistent across seven steps;
+- Preserved a predictable hierarchy for return, cancel and continue actions;
+- Allowed English, French and Chinese content to share flexible structures;
+- Gave design review and front-end implementation a shared state language;
+- Made rule changes easier to assess across repeated screens.
+
+**Evidence boundary**
+
+In retrospect, this is more accurately a project-level component system than a mature design system validated across products and long-term operations. It supported design handoff and front-end implementation, but there is no evidence that it improved development speed or store performance. The portfolio re-presents the original component logic for clarity; it is not a redesign that shipped at the time.
+
 ## Honest project outcome
 
 The product was designed and developed, but it was not put into operation at the LVV store. The portfolio must therefore describe delivery scope and decision quality, not claim user or business impact.
@@ -151,4 +169,3 @@ The case study should show both:
 - Whether screenshots or a recording of the developed front end still exist;
 - Whether the maintenance and ownership issue can be stated publicly;
 - Whether the legacy desktop system should be a separate case or part of this story.
-

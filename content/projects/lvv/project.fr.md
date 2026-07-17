@@ -97,6 +97,24 @@ L’écran final présente le numéro de commande, le montant et l’étape suiv
 - Handoff au développement ;
 - Implémentation front-end.
 
+### Pourquoi créer un système de composants au niveau du projet
+
+**Décision**
+
+Le parcours en sept étapes réutilisait les états de progression, les actions Return / Cancel / Confirm, les états de formulaire et de sélection ainsi que les contrôles multilingues. Concevoir chaque écran indépendamment aurait créé des divergences visuelles et comportementales. J’ai donc transformé les règles récurrentes en composants et états réutilisables au niveau du projet.
+
+**Valeur dans ce projet**
+
+- Cohérence des états terminé, actif et à venir sur les sept étapes ;
+- Hiérarchie prévisible entre retour, annulation et continuation ;
+- Structures flexibles communes à l’anglais, au français et au chinois ;
+- Langage d’état partagé entre les revues de design et l’implémentation front-end ;
+- Analyse plus simple de l’impact d’un changement de règle sur les écrans répétés.
+
+**Limite de preuve**
+
+Avec du recul, il s’agit plus précisément d’un système de composants propre au projet que d’un Design System mature, validé sur plusieurs produits et dans la durée. Il a soutenu le handoff et l’implémentation front-end, mais aucune donnée ne prouve un gain de vitesse de développement ou de performance en boutique. Le portfolio représente rétrospectivement la logique originale pour la rendre lisible ; il ne s’agit pas d’une refonte livrée à l’époque.
+
 ## Résultat réel du projet
 
 Le produit a été conçu et développé, mais n’a pas été mis en service dans la boutique LVV. Le portfolio doit donc présenter la qualité des décisions et le périmètre livré, sans revendiquer un impact utilisateur ou business non mesuré.
@@ -151,4 +169,3 @@ Le case study doit présenter deux niveaux :
 - Existence de captures ou d’un enregistrement du front-end développé ;
 - Possibilité de mentionner publiquement le problème de maintenance et d’ownership ;
 - Choix entre un case study séparé pour l’ancien système desktop ou son intégration à cette histoire.
-

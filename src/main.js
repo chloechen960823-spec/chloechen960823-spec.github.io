@@ -600,6 +600,55 @@ const initLVVDemo = () => {
 
 initLVVDemo();
 
+const initLVVSystemDemo = () => {
+  const demo = document.querySelector("[data-lvv-system]");
+  if (!demo) return;
+
+  const buttons = Array.from(demo.querySelectorAll("[data-system-step]"));
+  const counter = demo.querySelector("[data-system-counter]");
+  const title = demo.querySelector("[data-system-title]");
+  const helper = demo.querySelector("[data-system-helper]");
+  const value = demo.querySelector("[data-system-value]");
+  const action = demo.querySelector("[data-system-action]");
+  const steps = [
+    ["Where is the parcel going?", "Destination sets the rules for every decision that follows.", "France", "Continue →"],
+    ["How much does it weigh?", "A bounded numeric input keeps carrier calculations comparable.", "3.5 kg", "Continue →"],
+    ["Which service fits best?", "Price and speed share one comparison structure.", "Express · 2–4 days", "Choose service →"],
+    ["What is inside?", "Structured item details reduce ambiguous descriptions.", "Clothing · 2 items", "Continue →"],
+    ["Who should we contact?", "Contact details are grouped for review before hand-off.", "Recipient confirmed", "Continue →"],
+    ["Does it need protection?", "Insurance appears as a deliberate choice, not a hidden add-on.", "Standard coverage", "Review order →"],
+    ["Ready for staff hand-off", "The final state exposes the order reference and next action.", "Order created", "Finish"],
+  ];
+
+  const showStep = (index) => {
+    const step = steps[index];
+    if (!step) return;
+
+    buttons.forEach((button, buttonIndex) => {
+      button.classList.toggle("is-complete", buttonIndex < index);
+      button.classList.toggle("is-current", buttonIndex === index);
+      button.setAttribute("aria-selected", String(buttonIndex === index));
+    });
+
+    if (counter) counter.textContent = `Step ${String(index + 1).padStart(2, "0")} / 07`;
+    if (title) title.textContent = step[0];
+    if (helper) helper.textContent = step[1];
+    if (value) value.textContent = step[2];
+    if (action) action.textContent = step[3];
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => showStep(Number(button.dataset.systemStep || 0)));
+  });
+
+  action?.addEventListener("click", () => {
+    const current = buttons.findIndex((button) => button.classList.contains("is-current"));
+    showStep(Math.min(current + 1, steps.length - 1));
+  });
+};
+
+initLVVSystemDemo();
+
 document.querySelectorAll("[data-lightbox]").forEach((button) => {
   button.addEventListener("click", () => {
     if (!lightbox || !lightboxImage) return;
