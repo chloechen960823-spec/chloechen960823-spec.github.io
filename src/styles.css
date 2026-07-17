@@ -2945,7 +2945,7 @@ button.evidence-card {
 }
 
 .lvv-hero-stage {
-  width: min(1380px, calc(100vw - 100px));
+  width: min(1120px, calc(100vw - 160px));
   margin: 0 auto 14vh;
 }
 
@@ -3263,10 +3263,12 @@ button.evidence-card {
 }
 
 .lvv-demo {
-  grid-column: 2 / 7;
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 22px;
+  justify-self: center;
+  width: min(1220px, calc(100vw - 160px));
   margin-top: 7vh;
 }
 
@@ -3573,6 +3575,11 @@ button.evidence-card {
 }
 
 @media (max-width: 980px) {
+  .lvv-hero-stage,
+  .lvv-demo {
+    width: min(900px, calc(100vw - 64px));
+  }
+
   .lvv-truth-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3701,6 +3708,10 @@ button.evidence-card {
   .lvv-hero-stage {
     width: calc(100vw - 32px);
     margin-bottom: 10vh;
+  }
+
+  .lvv-demo {
+    width: 100%;
   }
 
   .lvv-device-bar {
