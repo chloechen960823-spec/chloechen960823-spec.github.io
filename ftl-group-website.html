@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FTL Group website redesign case study by Chloé Chen." />
+    <title>FTL Group Website — Chloé Chen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles.css?v=31" />
+  </head>
+  <body class="is-loading ftl-page" data-page="case">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-mark"><span>FTL</span><i></i></div>
+      <p>Website case study</p>
+    </div>
+    <div class="page-texture" aria-hidden="true"></div>
+
+    <header class="header" aria-label="Portfolio navigation">
+      <a class="brand" href="./index.html" aria-label="Chloé Chen home"><span>CC</span><strong>Chloé Chen</strong></a>
+      <div class="header-center"><span>Lead product designer</span><span>FTL Group · 2021–2022</span></div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="./index.html">Home</a><a class="is-active" href="./work.html">Work</a><a href="./about.html">About</a><a href="./contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="case case--ftl" id="main">
+      <section class="ftl2-hero">
+        <div class="ftl2-hero-copy reveal">
+          <p class="eyebrow">FTL Group · Corporate website</p>
+          <h1>One network.<br /><em>Many ways in.</em></h1>
+          <p>A multilingual B2B website that turned FTL's complex logistics network into clear client journeys, from China to Europe.</p>
+        </div>
+        <div class="ftl2-hero-device" data-ftl-hero-device aria-label="Animated preview of the launched FTL Group website">
+          <div class="ftl2-hero-browser">
+            <div class="ftl2-browser-bar"><span></span><span></span><span></span><strong>ftl-group.com</strong></div>
+            <div class="ftl2-hero-screen"><img data-ftl-tour src="./assets/ftl-website/01-final-site.png" alt="FTL Group website homepage" /></div>
+          </div>
+          <p class="ftl2-hero-device-note"><span>Launched product</span><strong>Desktop · FR / EN / ZH</strong></p>
+        </div>
+        <a class="ftl2-scroll-cue" href="#brief"><span>Read the case</span><i aria-hidden="true">↓</i></a>
+      </section>
+
+      <section class="ftl2-brief" id="brief">
+        <p class="ftl2-brief-statement reveal">
+          FTL could move goods from <em>China to Europe</em>. Its website could not explain that journey clearly enough to help sell it.
+        </p>
+        <dl class="ftl2-brief-meta reveal">
+          <div><dt>Role</dt><dd>Lead Product Designer</dd></div>
+          <div><dt>Scope</dt><dd>IA · Wireframes · Responsive UI</dd></div>
+          <div><dt>Team</dt><dd>4-person core team</dd></div>
+          <div><dt>Delivery</dt><dd>3 languages · Webflow · CMS</dd></div>
+          <div><dt>Status</dt><dd>Fully launched</dd></div>
+        </dl>
+      </section>
+
+      <section class="ftl2-problem">
+        <div class="ftl2-kicker reveal"><span>01</span><p>The problem</p></div>
+        <div class="ftl2-problem-copy reveal">
+          <p class="eyebrow">The CEO needed a sales tool</p>
+          <h2>The old site described the company. It did not help a prospect locate their problem.</h2>
+          <p>
+            FTL served large merchants moving goods into Europe through customs, transport hubs and last-mile delivery.
+            The old website exposed that operational structure all at once. Prospective clients struggled to find the part
+            that applied to them, and the CEO lacked a clear digital story to support business development.
+          </p>
+        </div>
+        <figure class="ftl2-before ftl2-before--archive reveal">
+          <div class="ftl2-before-stage">
+            <img class="ftl2-before-workspace" src="./assets/ftl-website/17-old-site-workspace.png" alt="Overview of the inherited FTL website source file" loading="lazy" />
+            <div class="ftl2-before-label"><span>01 / Source archive</span><strong>28 desktop artboards<br />15 mobile artboards</strong></div>
+            <img class="ftl2-before-scroll" src="./assets/ftl-website/15-old-ipad-pair.png" alt="Archived FTL website displayed across two long scrolling tablet mockups" loading="lazy" />
+          </div>
+          <figcaption><span>Archived V1</span>Many pages and services, but no clear audience-based route through them.</figcaption>
+        </figure>
+        <div class="ftl2-shift reveal">
+          <span>Reframing</span>
+          <p>Do not ask clients to understand FTL first.</p>
+          <strong>Help them recognise where FTL fits into their logistics chain.</strong>
+        </div>
+      </section>
+
+      <section class="ftl2-discovery">
+        <div class="ftl2-discovery-intro reveal">
+          <div class="ftl2-kicker"><span>02</span><p>Discovery</p></div>
+          <h2>The redesign started with a business diagnosis, <em>not a moodboard.</em></h2>
+          <p>Interviews with the CEO, Marketing and Sales were paired with an audit of the inherited site and a benchmark of B2B service websites. The goal was to separate evidence from assumption before changing the interface.</p>
+        </div>
+
+        <div class="ftl2-research-folds reveal" data-ftl-folds>
+          <article class="ftl2-research-fold is-open" data-ftl-fold>
+            <button type="button" aria-expanded="true" data-ftl-fold-trigger>
+              <span>01</span><strong>Audit synthesis</strong><small>What was obscuring a credible operation?</small><i aria-hidden="true">−</i>
+            </button>
+            <div class="ftl2-fold-body"><div>
+              <div class="ftl2-swot" aria-label="Synthesis of the website audit">
+                <div class="ftl2-swot-lead">
+                  <p class="eyebrow">Diagnosis</p>
+                  <h3>A credible operation was hidden behind a confusing digital front door.</h3>
+                </div>
+                <article><span>S</span><strong>Existing strengths</strong><p>Established Europe–China presence, responsive team and direct B2B relationships.</p></article>
+                <article><span>W</span><strong>Experience gaps</strong><p>Dense navigation, dated hierarchy and no clear targeting by client context.</p></article>
+                <article><span>O</span><strong>Commercial opportunity</strong><p>Use the website as a sales aid, clarify the offer and create contextual contact paths.</p></article>
+                <article><span>T</span><strong>Delivery risk</strong><p>A non-modular site would be difficult for the small team to extend and maintain.</p></article>
+              </div>
+            </div></div>
+          </article>
+
+          <article class="ftl2-research-fold" data-ftl-fold>
+            <button type="button" aria-expanded="false" data-ftl-fold-trigger>
+              <span>02</span><strong>Audience mapping</strong><small>Who needed a different way into the same network?</small><i aria-hidden="true">+</i>
+            </button>
+            <div class="ftl2-fold-body"><div>
+              <div class="ftl2-audiences">
+                <div class="ftl2-audiences-head">
+                  <p class="eyebrow">Working profiles</p>
+                  <h3>Four audiences entered with four different jobs to do.</h3>
+                  <p>These profiles were working design tools built from stakeholder knowledge. They guided prioritisation and content structure; they were not presented as statistically validated personas.</p>
+                </div>
+                <div class="ftl2-audience-list">
+                  <article><span>01</span><strong>Individual sender</strong><p>Needs reassurance, a simple route and visible delivery support.</p><small>Decision: make the first action obvious.</small></article>
+                  <article><span>02</span><strong>Wholesaler</strong><p>Needs volume handling, warehousing and cross-border coordination.</p><small>Decision: lead with operating capability.</small></article>
+                  <article><span>03</span><strong>Logistics partner</strong><p>Needs a reliable European relay and service integration.</p><small>Decision: expose the network and hand-offs.</small></article>
+                  <article><span>04</span><strong>E-commerce team</strong><p>Needs customs, fulfilment and last-mile support as one chain.</p><small>Decision: organise content around the journey.</small></article>
+                </div>
+              </div>
+            </div></div>
+          </article>
+
+          <article class="ftl2-research-fold" data-ftl-fold>
+            <button type="button" aria-expanded="false" data-ftl-fold-trigger>
+              <span>03</span><strong>Strategic benchmark</strong><small>Which category conventions should we keep or reject?</small><i aria-hidden="true">+</i>
+            </button>
+            <div class="ftl2-fold-body"><div>
+              <div class="ftl2-benchmark">
+                <div class="ftl2-benchmark-head">
+                  <p class="eyebrow">Category patterns</p>
+                  <h3>We did not copy competitors. We used them to expose recurring category problems.</h3>
+                </div>
+                <div class="ftl2-benchmark-table" role="table" aria-label="Benchmark findings and design implications">
+                  <div class="is-head" role="row"><span role="columnheader">Lens</span><span role="columnheader">Pattern observed</span><span role="columnheader">Design implication</span></div>
+                  <div role="row"><strong role="cell">Information architecture</strong><p role="cell">Service catalogues mirrored internal departments.</p><p role="cell">Begin with client context, then reveal capabilities.</p></div>
+                  <div role="row"><strong role="cell">Tone and visual direction</strong><p role="cell">Authority often became dense, institutional communication.</p><p role="cell">Keep credibility while reducing jargon and visual weight.</p></div>
+                  <div role="row"><strong role="cell">Primary target</strong><p role="cell">Different B2B audiences were treated as one generic visitor.</p><p role="cell">Create explicit paths for four operating contexts.</p></div>
+                  <div role="row"><strong role="cell">Conversion</strong><p role="cell">Generic contact prompts appeared after long corporate narratives.</p><p role="cell">Place relevant actions beside each solution journey.</p></div>
+                </div>
+              </div>
+            </div></div>
+          </article>
+        </div>
+
+        <div class="ftl2-core-decision reveal">
+          <p class="eyebrow">The core decision</p>
+          <h2>Navigation should begin with the client's operating context, <em>not FTL's organisation chart.</em></h2>
+          <p>The homepage became a router: recognise the visitor, connect their need to the right part of the logistics chain, prove the network, then invite a relevant business conversation.</p>
+        </div>
+      </section>
+
+      <section class="ftl2-build ftl2-build--stack">
+        <div class="ftl2-build-copy reveal">
+          <div class="ftl2-kicker"><span>03</span><p>From evidence to product</p></div>
+          <h2>Build the hierarchy first. Let the interface follow.</h2>
+          <p>
+            Another UX designer primarily structured the site tree with me. I then led the wireframes and all UI,
+            turning the architecture into reusable modules for desktop and mobile.
+          </p>
+        </div>
+        <div class="ftl2-evidence-stack">
+          <article class="ftl2-evidence-layer">
+            <div><span>01 / Structure</span><h3>Turn services into findable routes.</h3><p>The site tree connected audience needs, service pages and commercial actions before visual design began.</p></div>
+            <figure><img src="./assets/ftl-website/07-site-map.png" alt="FTL website structure board" loading="lazy" /></figure>
+          </article>
+          <article class="ftl2-evidence-layer">
+            <div><span>02 / Wireframes</span><h3>Test hierarchy before polishing it.</h3><p>Low-fidelity modules helped the team review entry points, content density and page relationships without debating decoration.</p></div>
+            <figure><img src="./assets/ftl-website/05-wireframe.png" alt="FTL website wireframes" loading="lazy" /></figure>
+          </article>
+          <article class="ftl2-evidence-layer">
+            <div><span>03 / UI system</span><h3>Make a small team faster and more consistent.</h3><p>Shared type, colour and interface patterns made responsive hand-off easier and gave the CMS site a reusable visual language.</p></div>
+            <figure><img src="./assets/ftl-website/06-ui-kit.png" alt="FTL website UI system" loading="lazy" /></figure>
+          </article>
+        </div>
+      </section>
+
+      <section class="ftl2-device-lab" data-ftl-device-lab>
+        <div class="ftl2-device-copy">
+          <p class="eyebrow">Responsive product</p>
+          <h2>Not one homepage.<br /><em>A system of journeys.</em></h2>
+          <p>Choose a client context. The desktop and mobile prototypes switch together, showing how the same architecture adapts without losing hierarchy.</p>
+        </div>
+        <div class="ftl2-device-controls" role="tablist" aria-label="Website journeys">
+          <button class="is-active" type="button" role="tab" aria-selected="true" data-device-view="0"><span>01</span>Overview</button>
+          <button type="button" role="tab" aria-selected="false" data-device-view="1"><span>02</span>E-commerce</button>
+          <button type="button" role="tab" aria-selected="false" data-device-view="2"><span>03</span>Wholesaler</button>
+        </div>
+        <div class="ftl2-device-stage">
+          <div class="ftl2-desktop-wrap">
+            <div class="ftl2-desktop-shell">
+              <div class="ftl2-browser-bar"><span></span><span></span><span></span><strong data-device-url>ftl-group.com</strong></div>
+              <div class="ftl2-desktop-screen"><img data-device-desktop data-ftl-tour src="./assets/ftl-website/01-final-site.png" alt="FTL Group homepage on desktop" /></div>
+            </div>
+            <div class="ftl2-desktop-foot" aria-hidden="true"><i></i></div>
+          </div>
+          <div class="ftl2-phone-wrap">
+            <div class="ftl2-phone-shell">
+              <div class="ftl2-phone-speaker" aria-hidden="true"></div>
+              <div class="ftl2-phone-screen"><img data-device-mobile data-ftl-tour src="./assets/ftl-website/08-mobile-home.png" alt="FTL Group homepage on mobile" /></div>
+            </div>
+            <p><span data-device-count>01 / 03</span><strong data-device-label>Corporate overview</strong></p>
+          </div>
+        </div>
+        <div class="ftl2-device-caption">
+          <span>Built from the original source files</span>
+          <p>Real desktop and 320px mobile screens, staged as a live responsive product instead of flattened portfolio slides.</p>
+        </div>
+      </section>
+
+      <section class="ftl2-delivery">
+        <div class="ftl2-delivery-head reveal">
+          <p class="eyebrow">Delivery decision</p>
+          <h2>Ship approved modules progressively, then make them operable.</h2>
+          <p>With a small team and an approximately three-month window, we confirmed modules and passed them into development instead of waiting for every page to be finished.</p>
+        </div>
+        <ol class="ftl2-delivery-flow reveal">
+          <li><span>01</span><strong>Structure</strong><p>Confirm hierarchy and content responsibility.</p></li>
+          <li><span>02</span><strong>Module</strong><p>Design shared patterns and responsive states.</p></li>
+          <li><span>03</span><strong>Build</strong><p>Hand approved modules to the internal Webflow team.</p></li>
+          <li><span>04</span><strong>Operate</strong><p>Enable Marketing & Communication to update content through CMS.</p></li>
+        </ol>
+        <div class="ftl2-delivery-result reveal">
+          <strong>Fully launched</strong>
+          <p>The complete multilingual website went live. It later disappeared because the company closed, not because the design was rejected.</p>
+        </div>
+      </section>
+
+      <section class="ftl2-truth">
+        <div class="ftl2-truth-copy reveal">
+          <p class="eyebrow">Evidence boundary</p>
+          <h2>Launched is a fact. Business growth is not.</h2>
+          <p>No reliable analytics, lead attribution or post-launch research records remain. I can defend the design and delivery decisions; I cannot invent a conversion lift.</p>
+        </div>
+        <dl class="ftl2-truth-list reveal">
+          <div><dt>Verified</dt><dd>Site structure, responsive UI, full Webflow launch and CMS maintenance.</dd></div>
+          <div><dt>Not verified</dt><dd>Conversion, SEO, lead volume or task-completion improvement.</dd></div>
+          <div><dt>What I would add now</dt><dd>Content testing, analytics events, accessibility review and sales-lead attribution.</dd></div>
+        </dl>
+      </section>
+
+      <section class="ftl2-close reveal">
+        <p>My contribution was not a prettier corporate website.</p>
+        <h2>I turned a complex service network into a clearer path from client need to business conversation.</h2>
+      </section>
+
+      <section class="project-next">
+        <a class="round-link" href="./work.html"><span>Back to work</span><i aria-hidden="true">←</i></a>
+        <a class="round-link" href="./lvv-shipping-system.html"><span>Next case</span><i aria-hidden="true">→</i></a>
+      </section>
+    </main>
+    <script src="./src/main.js?v=24"></script>
+  </body>
+</html>

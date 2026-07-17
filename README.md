@@ -9,6 +9,8 @@
 - [LVV 面试问答](content/projects/lvv/interview-faq.zh-CN.md)
 - [LVV English](content/projects/lvv/project.en.md)
 - [LVV Français](content/projects/lvv/project.fr.md)
+- [FTL 官网中文主文档](content/projects/ftl-website/project.zh-CN.md)
+- [FTL 2026-07-17 设计复盘](content/projects/ftl-website/retrospective-2026-07-17.zh-CN.md)
 
 内容修改顺序：先更新中文主文档，再同步面试问答、英文、法文和项目网页。
 

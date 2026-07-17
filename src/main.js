@@ -649,6 +649,170 @@ const initLVVSystemDemo = () => {
 
 initLVVSystemDemo();
 
+const initFTLCase = () => {
+  const tours = new WeakMap();
+  const startTour = async (image, duration = 22000) => {
+    if (!image || prefersReducedMotion) return;
+
+    try {
+      if (!image.complete && typeof image.decode === "function") await image.decode();
+    } catch {
+      // The load event below provides a second attempt when decoding is deferred.
+    }
+
+    window.requestAnimationFrame(() => {
+      tours.get(image)?.cancel();
+      const viewport = image.parentElement;
+      const distance = Math.max(image.getBoundingClientRect().height - (viewport?.clientHeight || 0), 0);
+      if (distance < 12) return;
+      const animation = image.animate(
+        [
+          { transform: "translate3d(0, 0, 0)", offset: 0 },
+          { transform: "translate3d(0, 0, 0)", offset: 0.06 },
+          { transform: `translate3d(0, ${-distance}px, 0)`, offset: 0.94 },
+          { transform: `translate3d(0, ${-distance}px, 0)`, offset: 1 },
+        ],
+        { duration, iterations: Infinity, direction: "alternate", easing: "cubic-bezier(.45, 0, .55, 1)" },
+      );
+      tours.set(image, animation);
+    });
+  };
+
+  document.querySelectorAll("[data-ftl-tour]").forEach((image, index) => {
+    startTour(image, index === 0 ? 26000 : 23000);
+    image.addEventListener("load", () => startTour(image, index === 0 ? 26000 : 23000));
+  });
+
+  const heroDevice = document.querySelector("[data-ftl-hero-device]");
+  if (heroDevice && !prefersReducedMotion && window.matchMedia("(hover: hover)").matches) {
+    heroDevice.addEventListener("pointermove", (event) => {
+      const bounds = heroDevice.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      heroDevice.style.setProperty("--hero-tilt-y", `${x * 7 - 4}deg`);
+      heroDevice.style.setProperty("--hero-tilt-x", `${y * -4}deg`);
+    });
+    heroDevice.addEventListener("pointerleave", () => {
+      heroDevice.style.removeProperty("--hero-tilt-x");
+      heroDevice.style.removeProperty("--hero-tilt-y");
+    });
+  }
+
+  const foldGroup = document.querySelector("[data-ftl-folds]");
+  if (foldGroup) {
+    const folds = Array.from(foldGroup.querySelectorAll("[data-ftl-fold]"));
+    const openFold = (target) => {
+      folds.forEach((fold) => {
+        const open = fold === target;
+        fold.classList.toggle("is-open", open);
+        const trigger = fold.querySelector("[data-ftl-fold-trigger]");
+        trigger?.setAttribute("aria-expanded", String(open));
+        const symbol = trigger?.querySelector("i");
+        if (symbol) symbol.textContent = open ? "−" : "+";
+      });
+    };
+
+    folds.forEach((fold) => {
+      fold.querySelector("[data-ftl-fold-trigger]")?.addEventListener("click", () => {
+        if (fold.classList.contains("is-open")) return;
+        openFold(fold);
+      });
+    });
+  }
+
+  const evidenceLayers = document.querySelectorAll(".ftl2-evidence-layer");
+  if (evidenceLayers.length) {
+    const layerObserver = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.target.classList.toggle("is-active", entry.isIntersecting)),
+      { rootMargin: "-18% 0px -22% 0px", threshold: 0.18 },
+    );
+    evidenceLayers.forEach((layer) => layerObserver.observe(layer));
+  }
+
+  const lab = document.querySelector("[data-ftl-device-lab]");
+  if (!lab) return;
+
+  const darkHeaderObserver = new IntersectionObserver(
+    ([entry]) => document.body.classList.toggle("ftl-dark-header", entry.isIntersecting),
+    { rootMargin: "-12% 0px -70% 0px", threshold: 0 },
+  );
+  darkHeaderObserver.observe(lab);
+
+  const controls = Array.from(lab.querySelectorAll("[data-device-view]"));
+  const desktop = lab.querySelector("[data-device-desktop]");
+  const mobile = lab.querySelector("[data-device-mobile]");
+  const url = lab.querySelector("[data-device-url]");
+  const count = lab.querySelector("[data-device-count]");
+  const label = lab.querySelector("[data-device-label]");
+  const views = [
+    {
+      desktop: "./assets/ftl-website/01-final-site.png",
+      mobile: "./assets/ftl-website/08-mobile-home.png",
+      desktopAlt: "FTL Group overview on desktop",
+      mobileAlt: "FTL Group overview on mobile",
+      url: "ftl-group.com",
+      label: "Corporate overview",
+    },
+    {
+      desktop: "./assets/ftl-website/11-desktop-solutions.png",
+      mobile: "./assets/ftl-website/10-mobile-ecommerce.png",
+      desktopAlt: "FTL e-commerce solutions on desktop",
+      mobileAlt: "FTL e-commerce solutions on mobile",
+      url: "ftl-group.com/e-commerce",
+      label: "E-commerce journey",
+    },
+    {
+      desktop: "./assets/ftl-website/13-desktop-wholesale.png",
+      mobile: "./assets/ftl-website/09-mobile-wholesale.png",
+      desktopAlt: "FTL wholesaler solutions on desktop",
+      mobileAlt: "FTL wholesaler solutions on mobile",
+      url: "ftl-group.com/wholesale",
+      label: "Wholesaler journey",
+    },
+  ];
+  let active = 0;
+  let autoplay;
+
+  const showView = (index, userInitiated = false) => {
+    const view = views[index];
+    if (!view || !desktop || !mobile) return;
+    active = index;
+    lab.classList.add("is-changing");
+    window.setTimeout(() => {
+      desktop.src = view.desktop;
+      desktop.alt = view.desktopAlt;
+      mobile.src = view.mobile;
+      mobile.alt = view.mobileAlt;
+      if (url) url.textContent = view.url;
+      if (count) count.textContent = `${String(index + 1).padStart(2, "0")} / 03`;
+      if (label) label.textContent = view.label;
+      controls.forEach((button, buttonIndex) => {
+        const selected = buttonIndex === index;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-selected", String(selected));
+      });
+      lab.classList.remove("is-changing");
+      startTour(desktop, 23000);
+      startTour(mobile, 25000);
+    }, prefersReducedMotion ? 0 : 180);
+
+    if (userInitiated && autoplay) {
+      window.clearInterval(autoplay);
+      autoplay = window.setInterval(() => showView((active + 1) % views.length), 28000);
+    }
+  };
+
+  controls.forEach((button) => {
+    button.addEventListener("click", () => showView(Number(button.dataset.deviceView || 0), true));
+  });
+
+  if (!prefersReducedMotion) {
+    autoplay = window.setInterval(() => showView((active + 1) % views.length), 28000);
+  }
+};
+
+initFTLCase();
+
 document.querySelectorAll("[data-lightbox]").forEach((button) => {
   button.addEventListener("click", () => {
     if (!lightbox || !lightboxImage) return;
