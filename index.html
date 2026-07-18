@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./src/home-about-v5.css?v=1" />
+    <link rel="stylesheet" href="./src/home-about-v5.css?v=7" />
+    <link rel="stylesheet" href="./proposals/core-practice-expansion-v1.css?v=15" />
   </head>
   <body class="home-v5">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -27,10 +28,20 @@
         <div class="hero-content"><p class="v5-pill">UX/UI · Product systems · AI prototypes</p><h1>I design digital products that make complexity feel clear, useful and alive.</h1><p class="hero-summary">From product narrative to interface systems, I turn messy ideas into experiences people can understand, trust and actually use.</p><a class="scroll-cue" href="#practice"><span>View practice</span><i>↓</i></a></div>
       </section>
 
-      <section class="v5-practice grid-lines" id="practice" data-scene="practice">
-        <div class="practice-orbit" aria-hidden="true"></div>
-        <div class="section-center" data-reveal><p class="eyebrow">Three capabilities, one practice</p><h2>My core design practice</h2><p>I connect product framing, interaction systems and AI-assisted building so the idea, interface and implementation keep pointing in the same direction.</p></div>
-        <div class="practice-globe globe-a"><span>Product<br />framing</span></div><div class="practice-globe globe-b"><span>Interaction<br />systems</span></div><div class="practice-globe globe-c"><span>AI-assisted<br />building</span></div>
+      <section class="v5-practice practice-motion grid-lines" id="practice" data-scene="practice" aria-labelledby="practice-title">
+        <div class="practice-sticky">
+          <div class="paper-grid" aria-hidden="true"></div><div class="ambient ambient-coral" aria-hidden="true"></div><div class="ambient ambient-sky" aria-hidden="true"></div>
+          <header class="practice-heading"><p class="eyebrow">Human-centred AI product workflow</p><h2 id="practice-title">From human need<br /><em>to learning product.</em></h2><p class="practice-intro">Six connected decisions for designing AI-enabled experiences responsibly.</p><small class="framework-basis">Adapted from Double Diamond · ISO 9241-210 · Google PAIR · Microsoft HAX</small></header>
+          <div class="deck" aria-label="Six-step AI product design workflow">
+            <article class="skill-card card-discover" style="--i:0;--x:-1;--y:-1;--r:-7deg"><div class="skill-visual visual-discover" role="img" aria-label="People, signals and context converging into a research insight"><i class="person person-a"></i><i class="person person-b"></i><i class="person person-c"></i><span class="signal signal-a"></span><span class="signal signal-b"></span><b>context</b><em>needs</em></div><div class="skill-copy"><span>01 / Discover</span><h3>Understand the context</h3><p>Observe people, tasks and constraints before deciding where AI belongs.</p></div></article>
+            <article class="skill-card card-define" style="--i:1;--x:0;--y:-1;--r:2deg"><div class="skill-visual visual-define" role="img" aria-label="Human value, business value and AI capability forming a viable opportunity"><span class="value human">Human<br />value</span><span class="value business">Business<br />value</span><span class="value ai-fit">AI<br />fit</span><i class="opportunity">opportunity</i></div><div class="skill-copy"><span>02 / Define</span><h3>Define success &amp; AI fit</h3><p>Set the outcome, boundaries and evidence that justify using AI.</p></div></article>
+            <article class="skill-card card-model" style="--i:2;--x:1;--y:-1;--r:7deg"><div class="skill-visual visual-model" role="img" aria-label="A shared mental model between a person and an AI system"><span class="model-node node-human">YOU</span><span class="model-node node-ai">AI</span><i class="model-bridge"><b>expectation</b><b>explanation</b><b>control</b></i></div><div class="skill-copy"><span>03 / Model</span><h3>Shape the mental model</h3><p>Make capability, confidence and human control understandable from the start.</p></div></article>
+            <article class="skill-card card-prototype" style="--i:3;--x:-1;--y:1;--r:5deg"><div class="skill-visual visual-prototype" role="img" aria-label="A coded interaction prototype moving through prompt, response and correction states"><span class="proto-window"><i class="proto-prompt"></i><i class="proto-response"></i><i class="proto-control">Adjust</i></span><b class="proto-cursor">↗</b><em class="proto-state">STATE 03</em></div><div class="skill-copy"><span>04 / Prototype</span><h3>Prototype the behaviour</h3><p>Test prompts, responses, handoffs and correction paths as a working system.</p></div></article>
+            <article class="skill-card card-validate" style="--i:4;--x:0;--y:1;--r:-2deg"><div class="skill-visual visual-validate" role="img" aria-label="Evaluation matrix comparing expected, observed and failure behaviours"><span class="test-label">SCENARIO</span><span class="test-row row-a"><i></i><i></i><i></i><b>pass</b></span><span class="test-row row-b"><i></i><i></i><i></i><b>learn</b></span><span class="test-row row-c"><i></i><i></i><i></i><b>fail</b></span></div><div class="skill-copy"><span>05 / Validate</span><h3>Test value &amp; failure</h3><p>Evaluate usefulness, trust, edge cases and graceful recovery with people.</p></div></article>
+            <article class="skill-card card-evolve" style="--i:5;--x:1;--y:1;--r:-6deg"><div class="skill-visual visual-evolve" role="img" aria-label="A product feedback loop connecting launch, signals, learning and iteration"><span class="loop loop-a">ship</span><span class="loop loop-b">signals</span><span class="loop loop-c">learn</span><span class="loop loop-d">adapt</span><i class="loop-path"></i><b class="pulse"></b></div><div class="skill-copy"><span>06 / Evolve</span><h3>Ship, monitor &amp; learn</h3><p>Release progressively, watch real signals and improve behaviour over time.</p></div></article>
+          </div>
+          <div class="scroll-status" aria-hidden="true"><span class="status-number">01</span><span class="status-line"><i></i></span><span>06</span></div><p class="closing-note">A continuous loop from evidence to responsible evolution.</p>
+        </div>
       </section>
 
       <section class="v5-capabilities grid-lines" data-scene="capabilities">
@@ -64,6 +75,7 @@
 
       <section class="v5-contact" data-scene="contact"><div class="window-glow" aria-hidden="true"></div><div class="window-light" aria-hidden="true"></div><div class="contact-copy" data-reveal><p class="eyebrow">Available for selected collaborations</p><h2>Let's make something<br />clearer together.</h2><p>I am interested in thoughtful products, complex systems and collaborations that need both structure and imagination.</p><div class="contact-links"><a href="mailto:">Email</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a><a href="./about.html">About me</a></div></div><footer><span>Chloe Chen · Product Designer</span><span>Paris · 2026</span></footer></section>
     </main>
-    <script src="./src/home-about-v5.js?v=1"></script>
+    <script src="./src/home-about-v5.js?v=7"></script>
+    <script src="./proposals/core-practice-expansion-v1.js?v=13"></script>
   </body>
 </html>

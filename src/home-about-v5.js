@@ -85,11 +85,6 @@
     document.querySelector('.hero-star').style.transform = `translate3d(${heroProgress * 70}px, ${heroProgress * 30}px, 0) rotate(${heroProgress * 80}deg)`;
     document.querySelector('.hero-asterisk').style.transform = `translate3d(0, ${heroProgress * 80}px, 0) rotate(${-heroProgress * 70}deg)`;
 
-    document.querySelector('.practice-orbit').style.transform = `translate(-50%,-50%) rotate(${-18 + practiceProgress * 20}deg)`;
-    document.querySelector('.globe-a').style.transform = `translate3d(${practiceProgress * 28}px, ${18 - practiceProgress * 70}px, 0) rotate(${-5 + practiceProgress * 5}deg)`;
-    document.querySelector('.globe-b').style.transform = `translate3d(${-practiceProgress * 25}px, ${40 - practiceProgress * 95}px, 0) rotate(${6 - practiceProgress * 7}deg)`;
-    document.querySelector('.globe-c').style.transform = `translate3d(0, ${80 - practiceProgress * 135}px, 0) rotate(${-4 + practiceProgress * 5}deg)`;
-
     if (capabilities) {
       const rect = capabilities.getBoundingClientRect();
       const local = clamp((window.innerHeight * .58 - rect.top) / Math.max(1, rect.height - window.innerHeight * .3));
