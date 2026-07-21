@@ -2418,6 +2418,7 @@ body[data-page="home"] .work-stage {
 }
 
 .project-line {
+  position: relative;
   display: grid;
   grid-template-columns: 70px 1.2fr 1.2fr 46px;
   align-items: center;
@@ -2449,6 +2450,46 @@ body[data-page="home"] .work-stage {
   border: 1px solid var(--line);
   border-radius: 50%;
   font-style: normal;
+}
+
+.project-hover-preview {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  right: 7%;
+  width: clamp(190px, 21vw, 300px);
+  aspect-ratio: 1.55;
+  overflow: hidden;
+  border: 7px solid rgba(255, 255, 255, 0.92);
+  border-radius: 6px;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 24px 54px rgba(35, 43, 17, 0.2);
+  pointer-events: none;
+  transform: translate(18px, -48%) rotate(3deg) scale(0.86);
+  transition: opacity 240ms ease, transform 420ms var(--ease);
+}
+
+.project-hover-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-line--lvv .project-hover-preview {
+  transform: translate(18px, -48%) rotate(-3deg) scale(0.86);
+}
+
+.project-line:hover .project-hover-preview,
+.project-line:focus-visible .project-hover-preview {
+  opacity: 1;
+  transform: translate(0, -50%) rotate(2deg) scale(1);
+}
+
+.project-line--lvv:hover .project-hover-preview,
+.project-line--lvv:focus-visible .project-hover-preview {
+  transform: translate(0, -50%) rotate(-2deg) scale(1);
 }
 
 .project-line--vibe {
@@ -4743,6 +4784,10 @@ button.evidence-card {
   }
 
   .project-line i {
+    display: none;
+  }
+
+  .project-hover-preview {
     display: none;
   }
 
