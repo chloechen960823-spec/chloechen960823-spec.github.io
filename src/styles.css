@@ -2315,13 +2315,41 @@ body[data-page="home"] .work-stage {
 }
 
 .page-main--contact {
+  position: relative;
   display: grid;
   place-items: center;
+  overflow: hidden;
   color: var(--paper);
   background: var(--night);
 }
 
+.page-main--contact::before {
+  position: absolute;
+  inset: -15%;
+  content: "";
+  opacity: 0.38;
+  filter: blur(40px);
+  transform: rotate(-8deg);
+  background:
+    repeating-linear-gradient(180deg, transparent 0 46px, rgba(210, 231, 151, 0.16) 47px 78px, transparent 80px 112px),
+    radial-gradient(ellipse at 50% 48%, rgba(210, 231, 151, 0.4), transparent 62%);
+}
+
+.contact-page-light {
+  position: absolute;
+  inset: 8% 5% 4%;
+  opacity: 0.28;
+  filter: blur(12px);
+  transform: perspective(1000px) rotateZ(-7deg) skewX(-8deg);
+  background:
+    linear-gradient(90deg, transparent 0 27%, rgba(7, 20, 2, 0.34) 28% 31%, transparent 32% 66%, rgba(7, 20, 2, 0.25) 67% 70%, transparent 71%),
+    linear-gradient(115deg, rgba(222, 238, 170, 0.08), rgba(222, 238, 170, 0.32), rgba(127, 157, 65, 0.05));
+  clip-path: polygon(7% 0, 94% 8%, 80% 100%, 0 88%);
+}
+
 .contact-page {
+  position: relative;
+  z-index: 1;
   max-width: 1000px;
   text-align: center;
 }
@@ -2334,6 +2362,59 @@ body[data-page="home"] .work-stage {
 .contact-page > p {
   margin-right: auto;
   margin-left: auto;
+}
+
+.contact-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.contact-page-actions a {
+  padding: 12px 19px;
+  border: 1px solid rgba(241, 239, 231, 0.58);
+  border-radius: 999px;
+  transition: color 240ms var(--ease), background 240ms var(--ease), transform 240ms var(--ease);
+}
+
+.contact-page-actions a:hover,
+.contact-page-actions a:focus-visible {
+  color: var(--night);
+  background: var(--paper);
+  transform: translateY(-2px);
+}
+
+.contact-page-actions .contact-primary {
+  color: var(--night);
+  background: var(--paper);
+}
+
+.contact-page-meta {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 64px;
+  color: rgba(241, 239, 231, 0.58);
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .contact-page-actions,
+  .contact-page-meta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-page-actions {
+    gap: 10px;
+  }
+
+  .contact-page-meta {
+    gap: 8px;
+    margin-top: 44px;
+  }
 }
 
 .project-line {
