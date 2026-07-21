@@ -2420,7 +2420,7 @@ body[data-page="home"] .work-stage {
 .project-line {
   position: relative;
   display: grid;
-  grid-template-columns: 70px 1.2fr 1.2fr 46px;
+  grid-template-columns: 70px 1.2fr 1.2fr auto 46px;
   align-items: center;
   min-height: 118px;
   border-top: 1px solid var(--line);
@@ -2452,6 +2452,13 @@ body[data-page="home"] .work-stage {
   font-style: normal;
 }
 
+.project-read-time {
+  color: var(--olive-soft);
+  font-size: 0.72rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .project-hover-preview {
   position: absolute;
   z-index: 8;
@@ -2475,6 +2482,22 @@ body[data-page="home"] .work-stage {
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.project-hover-preview b {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--olive);
+  box-shadow: 0 8px 22px rgba(35, 43, 17, 0.24);
+  font-family: "Geist", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .project-line--lvv .project-hover-preview {
@@ -4780,6 +4803,10 @@ button.evidence-card {
   }
 
   .project-line em {
+    grid-column: 2 / 3;
+  }
+
+  .project-read-time {
     grid-column: 2 / 3;
   }
 
